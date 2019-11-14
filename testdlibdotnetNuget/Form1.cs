@@ -24,8 +24,12 @@ namespace testdlibdotnetNuget
         private int counter = 1;
         private Dictionary<string, Image> imageList = new Dictionary<string, Image>();
         private PictureBox[] pictureBoxList = new PictureBox[15];
-        private IList<double> descriptionList;
+        private List<double> descriptionList;
         private string imageDir;
+        private List<Description> list;
+        dynamic detector;
+        dynamic net;
+        dynamic sp;
 
         private string rollNo;
         private string course;
@@ -34,7 +38,7 @@ namespace testdlibdotnetNuget
         private string email;
         private string institute;
         private string seq = "";
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +47,11 @@ namespace testdlibdotnetNuget
             }
             imageDir = ConfigurationManager.AppSettings["imageDirPath"];
             rdbtn_webcam.Checked = true;
+
+            list = DBHandler.getRecognitionDetails();
+            detector = Dlib.GetFrontalFaceDetector();
+            sp = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
+            net = DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
         }
 
         #region webcam
@@ -142,7 +151,7 @@ namespace testdlibdotnetNuget
                     foreach (var face in detector.Operator(img))
                     {
                         var shape = sp.Detect(img, face);
-                        var faceChipDetail = Dlib.GetFaceChipDetails(shape, 150, 0.25);
+                        var faceChipDetail = Dlib.GetFaceChipDetails(shape, 150, 0.40);
                         var faceChip = Dlib.ExtractImageChip<RgbPixel>(img, faceChipDetail);
                         faces.Add(faceChip);
                     }
@@ -186,7 +195,7 @@ namespace testdlibdotnetNuget
 
                     MethodInvoker inv = delegate
                     {
-                        this.lbl_status.Text = id + " image is captured successfully";
+                        this.lbl_status.Text = rollNo + " image is captured successfully";
                         lbl_status.ForeColor = Color.ForestGreen;
                     };
                     this.Invoke(inv);
@@ -306,9 +315,9 @@ namespace testdlibdotnetNuget
                     Console.WriteLine("image file dosen't exist  ");
                     return null;
                 }
-                var detector = Dlib.GetFrontalFaceDetector();
-                var sp = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
-                var net = DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
+                var detector = this.detector;// Dlib.GetFrontalFaceDetector();
+                var sp = this.sp;//ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
+                var net = this.net;//DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
 
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
@@ -317,7 +326,7 @@ namespace testdlibdotnetNuget
                     foreach (var face in detector.Operator(img))
                     {
                         var shape = sp.Detect(img, face);
-                        var faceChipDetail = Dlib.GetFaceChipDetails(shape, 150, 0.25);
+                        var faceChipDetail = Dlib.GetFaceChipDetails(shape, 150, 0.40);
                         var faceChip = Dlib.ExtractImageChip<RgbPixel>(img, faceChipDetail);
                         faces.Add(faceChip);
                     }
@@ -344,6 +353,7 @@ namespace testdlibdotnetNuget
                     }
 
                     var faceDescriptors = net.Operator(faces);
+                    
                     var trans = Dlib.Trans(faceDescriptors[0]);
 
                     string filePath = DIR + "description.text";
@@ -360,8 +370,7 @@ namespace testdlibdotnetNuget
                     
                     //save image
                     Dlib.SaveJpeg(faces[0], DIR+"recognition.jpg");
-
-                    IList<Description> list = DBHandler.getRecognitionDetails();
+                    
                     if (list != null)
                     {
                         double distance = 1;
@@ -381,15 +390,19 @@ namespace testdlibdotnetNuget
                         if (distance != 1 && minPosition != -1)
                         {
                             Console.WriteLine("name: " + list.ElementAt(minPosition).studentName + " ïmg: " + list.ElementAt(minPosition).image + " dis: " + calDistance);
-                            //if (calDistance < 0.500)
-                            //{
+                            if (calDistance < 0.60)
+                            {
                                 MethodInvoker inv = delegate
                                 {
                                     this.lbl_status.Text = list.ElementAt(minPosition).studentName;
                                     lbl_status.ForeColor = Color.ForestGreen;
                                 };
                                 this.Invoke(inv);
-                            
+                                if (DBHandler.insertOrUpdateAttandance(list.ElementAt(minPosition).rollNo.ToString()))
+                                {
+                                    Console.WriteLine("Attandance Marked+ "+ list.ElementAt(minPosition).rollNo.ToString());
+                                }
+                            }
                         }
                         else
                         {
@@ -403,12 +416,12 @@ namespace testdlibdotnetNuget
                             Console.WriteLine("Unknown");
                         }
                     }
-                    /*
+                    
                     foreach (var descriptor in faceDescriptors)
                         descriptor.Dispose();
 
                     foreach (var face in faces)
-                        face.Dispose();*/
+                        face.Dispose();
                 }
                 return name;
             }
@@ -448,31 +461,28 @@ namespace testdlibdotnetNuget
             }
         }
         
-        private Bitmap convertArray2DToImage(Array2D<BgrPixel> cimg) {
+        private Bitmap convertArray2DToImage(Array2D<BgrPixel> cimg) {            
             Bitmap pic = new Bitmap(cimg.Columns, cimg.Rows);
-            RgbPixel[] pixelArray = new RgbPixel[cimg.Rows*cimg.Columns];
-            for (int i = 0; i < 400; i++)
+            RgbPixel[] pixelArray = new RgbPixel[cimg.Rows * cimg.Columns];
+            for (int i = 0; i < 400; i++) { 
                 for (int j = 0; j < 600; j++)
                 {
                     Color color = Color.FromArgb(cimg[i][j].Red, cimg[i][j].Green, cimg[i][j].Blue);
-                    pic.SetPixel(j,i, color);
+                    pic.SetPixel(j, i, color);
                 }
-            pixelArray = null;
+            }
             return pic;
         }
         
         //Enrollemnet button function
         private void btn_enrollment_Click(object sender, EventArgs e)
         {
-            enrollFromJsonFile();
-            /*
             tab_1.Visible = true;
             tab_1.SelectedIndex = 0;
             ((Control)tab_enrollment).Enabled = true;
             pnl_viewList.Visible = true;
             pnl_viewList.Enabled = false;
-            Console.WriteLine(DBHandler.GetConnection().ToString());
-            */
+            //Console.WriteLine(DBHandler.GetConnection().ToString());
         }
 
         //Recognition button function
@@ -481,6 +491,7 @@ namespace testdlibdotnetNuget
             rdbtn_fileUpload.Visible = false;
             rdbtn_webcam.Visible = false;
 
+            btn_enrollFromFile.Enabled = false;
             btn_submit.Enabled = false;
             lbl_camtureFaces.Text = "Face Recognition";
 
@@ -504,7 +515,9 @@ namespace testdlibdotnetNuget
             await Task.Run(() =>
             {
                 recognitionWebcam();
-                FaceExtractionRecognition("recognition.jpg");
+                //FaceExtractionRecognition("recognition.jpg");
+                FaceExtractionRecognition();
+
             });
         }
 
@@ -512,6 +525,7 @@ namespace testdlibdotnetNuget
         {
             btn_enrollement.Enabled = true;
             btn_recognition.Enabled = true;
+            btn_enrollFromFile.Enabled = true;
             btn_stopRecognition.Enabled = false;
             btn_stopRecognition.Visible = false;
             if (_canceller != null)
@@ -778,13 +792,19 @@ namespace testdlibdotnetNuget
         /**
          * Fetch image file from folders and find the name mapping form 
          */
-        private void enrollFromJsonFile()
+        private void enrollFromFile()
         {
             try
             {
                 string imageDir = AppContext.BaseDirectory + @"\student_images";
                 string studentRollno;
                 string studentName;
+
+                string studentCourse=(string.IsNullOrEmpty(course))?"PG-DAC": course;
+                string studentEmail = (string.IsNullOrEmpty(email)) ? "mail@mail.com" : course;
+                string studentInstitute = (string.IsNullOrEmpty(institute)) ? "CDAC,Juhu" : course;
+                string studentCenterId = "1";
+
                 Dictionary<string, string> dict=new Dictionary<string, string>();
                 /*Read mapping.csv file and store all the mapping data into dictionary
                  * to get name corresponding roll number
@@ -794,7 +814,7 @@ namespace testdlibdotnetNuget
                 {
                     foreach (string line in csvData)
                     {
-                        Console.WriteLine(line);
+                        //Console.WriteLine(line);
                         string[] data = line.Split(',');
                         if (!dict.ContainsKey(data[1]))
                         {
@@ -806,13 +826,15 @@ namespace testdlibdotnetNuget
                 foreach (string studentImageDir in Directory.GetDirectories(imageDir))
                 {
                     studentRollno = studentImageDir.Substring(studentImageDir.LastIndexOf('\\') + 1);
+                    lbl_status.Text = studentRollno+" Data is capturing.......";
+                    lbl_status.ForeColor = Color.ForestGreen;
                     //Console.WriteLine(studentRollno + "\n");
                     foreach (string studentImage in Directory.GetFiles(studentImageDir))
                     {
                         if (!DBHandler.checkRollnoExist(studentRollno))
                         {
                             if (dict.TryGetValue(studentRollno,out studentName)) {
-                                bool status = DBHandler.InsertEnrollmenmtData(studentRollno, studentName,"",DateTime.Now.ToString(),"","","1");
+                                bool status = DBHandler.InsertEnrollmenmtData(studentRollno, studentName,studentCourse,DateTime.Now.ToString(),studentEmail,studentInstitute,studentCenterId);
                                 if (status)
                                 {
                                     rollNo = studentRollno;
@@ -828,6 +850,7 @@ namespace testdlibdotnetNuget
                             //Console.WriteLine("captureImage " + viewName);
                         }
                     }
+                    lbl_status.Text = null;
                 }
             }catch(Exception ex)
             {
@@ -1326,6 +1349,11 @@ namespace testdlibdotnetNuget
         private void rdbtn_fileUpload_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_enrollFromFile_Click(object sender, EventArgs e)
+        {
+            enrollFromFile();
         }
     }
 }

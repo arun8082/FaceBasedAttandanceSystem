@@ -219,5 +219,61 @@ namespace testdlibdotnetNuget
             }
             return false;
         }
+
+        public static bool insertOrUpdateAttandance(string rollNo)
+        {
+            /* if entry time exist for the particular rollno then update exit time
+             * else insert new entry for the current date
+             */
+            try
+            {
+                string str = "select count(*) from attendance where roll_no='{0}'";
+                string sqlstr = string.Format(str, rollNo);
+                GetConnection().Open();
+                NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                int res = Convert.ToInt32(cmd.ExecuteScalar());
+                if (res > 0)
+                {
+                    str = "update attendance set exit_dateTime=now()::timestamp(0) where roll_no={0}";
+                    sqlstr = string.Format(str, rollNo);
+                    cmd = new NpgsqlCommand(sqlstr);
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+                    res =cmd.ExecuteNonQuery();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    str = "insert into attendance(roll_no,is_present,entry_dateTime) values({0},'true',now()::timestamp(0))";
+                    sqlstr = string.Format(str, rollNo);
+                    Console.WriteLine(sqlstr);
+                    cmd = new NpgsqlCommand(sqlstr);
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+                    res = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                }                
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+            return false;
+        }
     }
 }

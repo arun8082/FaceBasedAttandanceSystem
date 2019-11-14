@@ -56,6 +56,8 @@
             this.lbl_rollNo = new System.Windows.Forms.Label();
             this.txt_rollNo = new System.Windows.Forms.TextBox();
             this.tab_capture = new System.Windows.Forms.TabPage();
+            this.rdbtn_fileUpload = new System.Windows.Forms.RadioButton();
+            this.rdbtn_webcam = new System.Windows.Forms.RadioButton();
             this.lbl_camtureFaces = new System.Windows.Forms.Label();
             this.pic_camera = new System.Windows.Forms.PictureBox();
             this.pnl_viewList = new System.Windows.Forms.Panel();
@@ -119,8 +121,7 @@
             this.btn_3_capture1 = new System.Windows.Forms.Button();
             this.pic_3_frontView = new System.Windows.Forms.PictureBox();
             this.lbl_3_frontView = new System.Windows.Forms.Label();
-            this.rdbtn_webcam = new System.Windows.Forms.RadioButton();
-            this.rdbtn_fileUpload = new System.Windows.Forms.RadioButton();
+            this.btn_enrollFromFile = new System.Windows.Forms.Button();
             this.pnl_left.SuspendLayout();
             this.pnl_mid.SuspendLayout();
             this.pnl_status.SuspendLayout();
@@ -169,6 +170,7 @@
             // 
             // pnl_left
             // 
+            this.pnl_left.Controls.Add(this.btn_enrollFromFile);
             this.pnl_left.Controls.Add(this.btn_stopRecognition);
             this.pnl_left.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_left.Location = new System.Drawing.Point(0, 0);
@@ -178,9 +180,9 @@
             // 
             // btn_stopRecognition
             // 
-            this.btn_stopRecognition.Location = new System.Drawing.Point(6, 93);
+            this.btn_stopRecognition.Location = new System.Drawing.Point(7, 144);
             this.btn_stopRecognition.Name = "btn_stopRecognition";
-            this.btn_stopRecognition.Size = new System.Drawing.Size(75, 23);
+            this.btn_stopRecognition.Size = new System.Drawing.Size(75, 36);
             this.btn_stopRecognition.TabIndex = 13;
             this.btn_stopRecognition.Text = "Stop recognition";
             this.btn_stopRecognition.UseVisualStyleBackColor = true;
@@ -421,6 +423,30 @@
             this.tab_capture.TabIndex = 1;
             this.tab_capture.Text = "Capture";
             this.tab_capture.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_fileUpload
+            // 
+            this.rdbtn_fileUpload.AutoSize = true;
+            this.rdbtn_fileUpload.Location = new System.Drawing.Point(286, 19);
+            this.rdbtn_fileUpload.Name = "rdbtn_fileUpload";
+            this.rdbtn_fileUpload.Size = new System.Drawing.Size(78, 17);
+            this.rdbtn_fileUpload.TabIndex = 34;
+            this.rdbtn_fileUpload.TabStop = true;
+            this.rdbtn_fileUpload.Text = "File Upload";
+            this.rdbtn_fileUpload.UseVisualStyleBackColor = true;
+            this.rdbtn_fileUpload.CheckedChanged += new System.EventHandler(this.rdbtn_fileUpload_CheckedChanged);
+            // 
+            // rdbtn_webcam
+            // 
+            this.rdbtn_webcam.AutoSize = true;
+            this.rdbtn_webcam.Location = new System.Drawing.Point(189, 19);
+            this.rdbtn_webcam.Name = "rdbtn_webcam";
+            this.rdbtn_webcam.Size = new System.Drawing.Size(68, 17);
+            this.rdbtn_webcam.TabIndex = 33;
+            this.rdbtn_webcam.TabStop = true;
+            this.rdbtn_webcam.Text = "Webcam";
+            this.rdbtn_webcam.UseVisualStyleBackColor = true;
+            this.rdbtn_webcam.CheckedChanged += new System.EventHandler(this.rdbtn_webcam_CheckedChanged);
             // 
             // lbl_camtureFaces
             // 
@@ -1127,29 +1153,15 @@
             this.lbl_3_frontView.TabIndex = 0;
             this.lbl_3_frontView.Text = "Front View";
             // 
-            // rdbtn_webcam
+            // btn_enrollFromFile
             // 
-            this.rdbtn_webcam.AutoSize = true;
-            this.rdbtn_webcam.Location = new System.Drawing.Point(189, 19);
-            this.rdbtn_webcam.Name = "rdbtn_webcam";
-            this.rdbtn_webcam.Size = new System.Drawing.Size(68, 17);
-            this.rdbtn_webcam.TabIndex = 33;
-            this.rdbtn_webcam.TabStop = true;
-            this.rdbtn_webcam.Text = "Webcam";
-            this.rdbtn_webcam.UseVisualStyleBackColor = true;
-            this.rdbtn_webcam.CheckedChanged += new System.EventHandler(this.rdbtn_webcam_CheckedChanged);
-            // 
-            // rdbtn_fileUpload
-            // 
-            this.rdbtn_fileUpload.AutoSize = true;
-            this.rdbtn_fileUpload.Location = new System.Drawing.Point(286, 19);
-            this.rdbtn_fileUpload.Name = "rdbtn_fileUpload";
-            this.rdbtn_fileUpload.Size = new System.Drawing.Size(78, 17);
-            this.rdbtn_fileUpload.TabIndex = 34;
-            this.rdbtn_fileUpload.TabStop = true;
-            this.rdbtn_fileUpload.Text = "File Upload";
-            this.rdbtn_fileUpload.UseVisualStyleBackColor = true;
-            this.rdbtn_fileUpload.CheckedChanged += new System.EventHandler(this.rdbtn_fileUpload_CheckedChanged);
+            this.btn_enrollFromFile.Location = new System.Drawing.Point(6, 92);
+            this.btn_enrollFromFile.Name = "btn_enrollFromFile";
+            this.btn_enrollFromFile.Size = new System.Drawing.Size(75, 35);
+            this.btn_enrollFromFile.TabIndex = 14;
+            this.btn_enrollFromFile.Text = "Enroll From File";
+            this.btn_enrollFromFile.UseVisualStyleBackColor = true;
+            this.btn_enrollFromFile.Click += new System.EventHandler(this.btn_enrollFromFile_Click);
             // 
             // Form1
             // 
@@ -1291,6 +1303,7 @@
         private System.Windows.Forms.MonthCalendar cal_dob;
         private System.Windows.Forms.RadioButton rdbtn_fileUpload;
         private System.Windows.Forms.RadioButton rdbtn_webcam;
+        private System.Windows.Forms.Button btn_enrollFromFile;
     }
 }
 
