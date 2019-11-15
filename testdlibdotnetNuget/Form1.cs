@@ -69,9 +69,9 @@ namespace testdlibdotnetNuget
                 }
 
                 // Load face detection and pose estimation models.
-                using (var detector = Dlib.GetFrontalFaceDetector())
-                using (var poseModel = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat"))
-                {
+                var detector = this.detector;
+                var poseModel = this.sp;
+                
                     // Grab a frame
                     var temp = new OpenCvSharp.Mat();
                     if (!cap.Read(temp))
@@ -120,7 +120,7 @@ namespace testdlibdotnetNuget
                         image.Save(DIR + imageName, ImageFormat.Jpeg);
                         pic_camera.Image = image;
                     }
-                }
+                
             }
             catch (Exception e)
             {
@@ -140,9 +140,9 @@ namespace testdlibdotnetNuget
                 if (!File.Exists(DIR + imageName)) {
                     return null;
                 }
-                using (var detector = Dlib.GetFrontalFaceDetector())
-                using (var sp = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat"))
-                using (var net = DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat"))
+                var detector = this.detector;
+                var sp = this.sp;
+                var net = this.net ;
 
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
@@ -240,8 +240,8 @@ namespace testdlibdotnetNuget
                 }
 
                 // Load face detection and pose estimation models.
-                using (var detector = Dlib.GetFrontalFaceDetector())
-                using (var poseModel = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat"))
+                var detector = this.detector;
+                using (var poseModel = this.sp)
                 {
                     while (!camStatus)
                     {
@@ -480,7 +480,7 @@ namespace testdlibdotnetNuget
             tab_1.SelectedIndex = 0;
             ((Control)tab_enrollment).Enabled = true;
             pnl_viewList.Visible = true;
-            pnl_viewList.Enabled = false;
+            //pnl_viewList.Enabled = false;
             //Console.WriteLine(DBHandler.GetConnection().ToString());
         }
 
