@@ -63,6 +63,7 @@
             this.btn_enroll.TabIndex = 3;
             this.btn_enroll.Text = "Enrollment";
             this.btn_enroll.UseVisualStyleBackColor = true;
+            this.btn_enroll.Visible = false;
             this.btn_enroll.Click += new System.EventHandler(this.btn_enroll_Click);
             // 
             // btn_calDistance

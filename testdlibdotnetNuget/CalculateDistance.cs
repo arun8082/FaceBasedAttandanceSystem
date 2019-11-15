@@ -160,6 +160,7 @@ namespace testdlibdotnetNuget
                 double d = desc1[i] - desc2[i];
                 sum += (d * d);
             }
+            
             return Math.Sqrt(sum);
         }
         #endregion FaceMatching
