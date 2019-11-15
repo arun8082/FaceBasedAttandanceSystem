@@ -74,11 +74,12 @@ namespace testdlibdotnetNuget
         {
             List<double> description1 = getDescription("image1.jpg");
             List<double> description2 = getDescription("image2.jpg");
+
             if (description1 != null && description2 != null)
             {
                 Console.WriteLine(string.Join(",", description1.ToArray()));
                 Console.WriteLine(string.Join(",", description2.ToArray()));
-                double distance = calculateDistance(description1.ToArray(), description2.ToArray());
+                double distance = calculateDistance(description1, description2);
                 lbl_status.Text = "Distance= " + distance;
             }
         }
@@ -152,10 +153,10 @@ namespace testdlibdotnetNuget
             return null;
         }
 
-        private double calculateDistance(double[] desc1, double[] desc2)
-        {
+        private double calculateDistance(List<double> desc1, List<double> desc2)
+        {            
             double sum = 0;
-            for (int i = 0; i < desc1.Length; i++)
+            for (int i = 0; i < desc1.Count; i++)
             {
                 double d = desc1[i] - desc2[i];
                 sum += (d * d);

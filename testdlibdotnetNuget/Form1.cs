@@ -314,9 +314,9 @@ namespace testdlibdotnetNuget
                     Console.WriteLine("image file dosen't exist  ");
                     return null;
                 }
-                var detector = this.detector;// Dlib.GetFrontalFaceDetector();
-                var sp = this.sp;//ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
-                var net = this.net;//DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
+                var detector = this.detector;
+                var sp = this.sp;
+                var net = this.net;
 
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
@@ -378,7 +378,7 @@ namespace testdlibdotnetNuget
                         int i = 0;
 
                         foreach (Description desc in list) {
-                            calDistance = calculateDistance(descriptionList.ToArray(), desc.description);
+                            calDistance = calculateDistance(descriptionList, desc.description);
                             if (distance > calDistance)
                             {
                                 distance = calDistance;
@@ -438,9 +438,9 @@ namespace testdlibdotnetNuget
             return null;
         }
 
-        private double calculateDistance(double[] desc1, double[] desc2){
+        private double calculateDistance(List<double> desc1, List<double> desc2){
             double sum = 0;
-            for(int i=0; i < desc1.Length; i++)
+            for(int i=0; i < desc1.Count; i++)
             {
                 double d = desc1[i] - desc2[i];
                 sum += (d * d);

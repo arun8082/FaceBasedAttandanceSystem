@@ -10,11 +10,11 @@ namespace testdlibdotnetNuget
     {
         
         public string studentName{get;set;}
-        public double[] description{get;set;}
+        public List<double> description {get;set;}
         public long rollNo { get; set; }
         public string image { get; set; }
 
-        public Description(long rollNo,string studentName, string image,double[] description)
+        public Description(long rollNo,string studentName, string image, List<double> description)
         {
             this.studentName = studentName;
             this.description = description;
