@@ -31,6 +31,7 @@
             this.btn_enrollement = new System.Windows.Forms.Button();
             this.btn_recognition = new System.Windows.Forms.Button();
             this.pnl_left = new System.Windows.Forms.Panel();
+            this.btn_enrollFromFile = new System.Windows.Forms.Button();
             this.btn_stopRecognition = new System.Windows.Forms.Button();
             this.pnl_mid = new System.Windows.Forms.Panel();
             this.pnl_status = new System.Windows.Forms.Panel();
@@ -121,7 +122,7 @@
             this.btn_3_capture1 = new System.Windows.Forms.Button();
             this.pic_3_frontView = new System.Windows.Forms.PictureBox();
             this.lbl_3_frontView = new System.Windows.Forms.Label();
-            this.btn_enrollFromFile = new System.Windows.Forms.Button();
+            this.btn_calDistance = new System.Windows.Forms.Button();
             this.pnl_left.SuspendLayout();
             this.pnl_mid.SuspendLayout();
             this.pnl_status.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             // pnl_left
             // 
+            this.pnl_left.Controls.Add(this.btn_calDistance);
             this.pnl_left.Controls.Add(this.btn_enrollFromFile);
             this.pnl_left.Controls.Add(this.btn_stopRecognition);
             this.pnl_left.Dock = System.Windows.Forms.DockStyle.Left;
@@ -177,6 +179,16 @@
             this.pnl_left.Name = "pnl_left";
             this.pnl_left.Size = new System.Drawing.Size(87, 460);
             this.pnl_left.TabIndex = 10;
+            // 
+            // btn_enrollFromFile
+            // 
+            this.btn_enrollFromFile.Location = new System.Drawing.Point(6, 92);
+            this.btn_enrollFromFile.Name = "btn_enrollFromFile";
+            this.btn_enrollFromFile.Size = new System.Drawing.Size(75, 35);
+            this.btn_enrollFromFile.TabIndex = 14;
+            this.btn_enrollFromFile.Text = "Enroll From File";
+            this.btn_enrollFromFile.UseVisualStyleBackColor = true;
+            this.btn_enrollFromFile.Click += new System.EventHandler(this.btn_enrollFromFile_Click);
             // 
             // btn_stopRecognition
             // 
@@ -1153,15 +1165,15 @@
             this.lbl_3_frontView.TabIndex = 0;
             this.lbl_3_frontView.Text = "Front View";
             // 
-            // btn_enrollFromFile
+            // btn_calDistance
             // 
-            this.btn_enrollFromFile.Location = new System.Drawing.Point(6, 92);
-            this.btn_enrollFromFile.Name = "btn_enrollFromFile";
-            this.btn_enrollFromFile.Size = new System.Drawing.Size(75, 35);
-            this.btn_enrollFromFile.TabIndex = 14;
-            this.btn_enrollFromFile.Text = "Enroll From File";
-            this.btn_enrollFromFile.UseVisualStyleBackColor = true;
-            this.btn_enrollFromFile.Click += new System.EventHandler(this.btn_enrollFromFile_Click);
+            this.btn_calDistance.Location = new System.Drawing.Point(6, 411);
+            this.btn_calDistance.Name = "btn_calDistance";
+            this.btn_calDistance.Size = new System.Drawing.Size(75, 36);
+            this.btn_calDistance.TabIndex = 15;
+            this.btn_calDistance.Text = "Calculate Distance";
+            this.btn_calDistance.UseVisualStyleBackColor = true;
+            this.btn_calDistance.Click += new System.EventHandler(this.btn_calDistance_Click);
             // 
             // Form1
             // 
@@ -1304,6 +1316,7 @@
         private System.Windows.Forms.RadioButton rdbtn_fileUpload;
         private System.Windows.Forms.RadioButton rdbtn_webcam;
         private System.Windows.Forms.Button btn_enrollFromFile;
+        private System.Windows.Forms.Button btn_calDistance;
     }
 }
 

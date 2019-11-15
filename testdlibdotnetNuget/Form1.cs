@@ -225,7 +225,6 @@ namespace testdlibdotnetNuget
         #endregion faceExtraction
 
         #region recognition
-
         private void recognitionWebcam()
         {
             try
@@ -858,6 +857,7 @@ namespace testdlibdotnetNuget
             }
         }
 
+        #region viewButtons
         #region 3_feet_buttons
         /*-----------------3feet-frontview Buttons------------------------------*/
         private void btn_3_capture1_ClickAsync(object sender, EventArgs e)
@@ -1340,6 +1340,7 @@ namespace testdlibdotnetNuget
             resetImage("pic_7_downView");
         }
         #endregion 7_feet_buttons
+        #endregion viewButtons
 
         private void rdbtn_webcam_CheckedChanged(object sender, EventArgs e)
         {
@@ -1355,5 +1356,12 @@ namespace testdlibdotnetNuget
         {
             enrollFromFile();
         }
+
+        private void btn_calDistance_Click(object sender, EventArgs e)
+        {
+            CalculateDistance f=new CalculateDistance();
+            f.Show();
+        }
+
     }
 }
