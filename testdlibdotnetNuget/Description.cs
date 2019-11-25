@@ -27,5 +27,18 @@ namespace testdlibdotnetNuget
             return rollNo + " " + studentName + ""+image+" \n" + description;
         }
 
+        public override bool Equals(Object obj)
+        {
+            if (this.rollNo == ((Description)obj).rollNo)
+            {
+                Console.WriteLine("Equals");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            return false;
+        }
     }
 }
