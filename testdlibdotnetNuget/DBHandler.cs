@@ -164,14 +164,16 @@ namespace testdlibdotnetNuget
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = con;
                 NpgsqlDataReader reader = cmd.ExecuteReader();
-                List<double> descList = new List<double>();
+                List<double> descList;
                 double[] desc;
                 if (reader != null)
                 {
                     while (reader.Read())
                     {
+                        descList = new List<double>();
                         desc=reader.GetFieldValue<double[]>(3);
                         descList.AddRange(desc);
+
                         //Console.WriteLine(string.Join(",",descList));
                         list.Add( new Description(reader.GetInt64(0),reader.GetString(1), reader.GetString(2),descList));
                         //res =reader.GetString(0);

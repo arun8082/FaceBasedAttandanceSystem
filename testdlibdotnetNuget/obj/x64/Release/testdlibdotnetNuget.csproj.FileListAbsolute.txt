@@ -451,5 +451,5 @@ D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetN
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.csproj.CopyComplete
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.exe
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.pdb
-D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.csprojAssemblyReference.cache
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.CalculateDistance.resources
+D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.csprojAssemblyReference.cache

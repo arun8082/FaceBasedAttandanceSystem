@@ -155,13 +155,14 @@ namespace testdlibdotnetNuget
 
         private double calculateDistance(List<double> desc1, List<double> desc2)
         {            
+            Console.WriteLine(desc1.Count+" "+desc2.Count);
             double sum = 0;
             for (int i = 0; i < desc1.Count; i++)
             {
                 double d = desc1[i] - desc2[i];
-                sum += (d * d);
+                sum += Math.Pow(d,2);
             }
-            
+            Console.WriteLine("sum: "+ Math.Sqrt(sum));
             return Math.Sqrt(sum);
         }
         #endregion FaceMatching

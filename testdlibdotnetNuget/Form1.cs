@@ -27,9 +27,9 @@ namespace testdlibdotnetNuget
         private List<double> descriptionList;
         private string imageDir;
         private List<Description> list;
-        dynamic detector;
-        dynamic net;
-        dynamic sp;
+        private static dynamic detector;
+        private static dynamic net;
+        private static dynamic sp;
 
         private string rollNo;
         private string course;
@@ -64,27 +64,26 @@ namespace testdlibdotnetNuget
                 //var cap = new OpenCvSharp.VideoCapture("20090124_WeeklyAddress.ogv.360p.webm");
                 if (!cap.IsOpened())
                 {
-                    Console.WriteLine("Unable to connect to camera");
+                    //Console.WriteLine("Unable to connect to camera");
+                    MethodInvoker inv = delegate
+                    {
+                        this.lbl_status.Text = "Unable to connect to camera";
+                        lbl_status.ForeColor = Color.DarkRed;
+                    };
+                    this.Invoke(inv);
                     return;
                 }
 
                 // Load face detection and pose estimation models.
-                var detector = this.detector;
-                var poseModel = this.sp;
+                //var detector = this.detector;
+                //var poseModel = this.sp;
                 
                     // Grab a frame
                     var temp = new OpenCvSharp.Mat();
                     if (!cap.Read(temp))
                     {
-                        //break;
+                        return;
                     }
-
-                    // Turn OpenCV's Mat into something dlib can deal with.  Note that this just
-                    // wraps the Mat object, it doesn't copy anything.  So cimg is only valid as
-                    // long as temp is valid.  Also don't do anything to temp that would cause it
-                    // to reallocate the memory which stores the image as that will make cimg
-                    // contain dangling pointers.  This basically means you shouldn't modify temp
-                    // while using cimg.
 
                     //Console.WriteLine("temp\n"+ temp.Width * temp.Height * temp.ElemSize() + " "+ temp);
                     var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
@@ -97,7 +96,7 @@ namespace testdlibdotnetNuget
                         var shapes = new List<FullObjectDetection>();
                         for (var i = 0; i < faces.Length; ++i)
                         {
-                            var det = poseModel.Detect(cimg, faces[i]);
+                            var det = sp.Detect(cimg, faces[i]);
                             shapes.Add(det);
                         }
 
@@ -140,9 +139,6 @@ namespace testdlibdotnetNuget
                 if (!File.Exists(DIR + imageName)) {
                     return null;
                 }
-                var detector = this.detector;
-                var sp = this.sp;
-                var net = this.net ;
 
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
@@ -235,70 +231,70 @@ namespace testdlibdotnetNuget
                 //var cap = new OpenCvSharp.VideoCapture("20090124_WeeklyAddress.ogv.360p.webm");
                 if (!cap.IsOpened())
                 {
-                    Console.WriteLine("Unable to connect to camera");
+                    MethodInvoker inv = delegate
+                    {
+                        this.lbl_status.Text = "Unable to connect to camera";
+                        lbl_status.ForeColor = Color.DarkRed;
+                    };
+                    this.Invoke(inv);
                     return;
                 }
 
-                // Load face detection and pose estimation models.
-                var detector = this.detector;
-                using (var poseModel = this.sp)
+                while (!camStatus)
                 {
-                    while (!camStatus)
+                    // Grab a frame
+                    var temp = new OpenCvSharp.Mat();
+                    if (!cap.Read(temp))
                     {
-                        // Grab a frame
-                        var temp = new OpenCvSharp.Mat();
-                        if (!cap.Read(temp))
+                        break;
+                    }
+
+                    //Console.WriteLine("temp\n"+ temp.Width * temp.Height * temp.ElemSize() + " "+ temp);
+                    var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
+                    Marshal.Copy(temp.Data, array, 0, array.Length);
+                    using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
+                    {
+                        // Detect faces 
+                        var faces = detector.Operator(cimg);
+                        // Find the pose of each face.
+                        var shapes = new List<FullObjectDetection>();
+                        for (var i = 0; i < faces.Length; ++i)
                         {
-                            break;
+                            var det = sp.Detect(cimg, faces[i]);
+                            shapes.Add(det);
+                            var point = det.GetPart((uint)i);
+                            X = point.X;
+                            Y = point.Y;
                         }
 
-                        //Console.WriteLine("temp\n"+ temp.Width * temp.Height * temp.ElemSize() + " "+ temp);
-                        var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
-                        Marshal.Copy(temp.Data, array, 0, array.Length);
-                        using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
+                        // Display it all on the screen
+                        var lines = Dlib.RenderFaceDetections(shapes);
+
+                        //delete previous image file
+                        if (File.Exists(DIR + imageName))
                         {
-                            // Detect faces 
-                            var faces = detector.Operator(cimg);
-                            // Find the pose of each face.
-                            var shapes = new List<FullObjectDetection>();
-                            for (var i = 0; i < faces.Length; ++i)
-                            {
-                                var det = poseModel.Detect(cimg, faces[i]);
-                                shapes.Add(det);
-                                var point = det.GetPart((uint)i);
-                                X = point.X;
-                                Y = point.Y;
-                            }
-
-                            // Display it all on the screen
-                            var lines = Dlib.RenderFaceDetections(shapes);
-
-                            //delete previous image file
-                            if (File.Exists(DIR + imageName))
-                            {
-                                File.Delete(DIR + imageName);
-                            }
-
-                            image = convertArray2DToImage(cimg);
-                            image.Save(DIR + imageName, ImageFormat.Jpeg);
-
-                            Pen pen = new Pen(Color.Red);
-                            System.Drawing.Rectangle rect = new System.Drawing.Rectangle(X, Y - 60, 150, 150);
-                            Graphics gr = Graphics.FromImage(image);
-                            gr.DrawRectangle(pen, rect);
-
-                            pic_camera.Image = image;
-
-                            foreach (var line in lines)
-                            {
-                                line.Dispose();
-                            }
-                            temp.Dispose();
-                            FaceExtractionRecognition();
+                            File.Delete(DIR + imageName);
                         }
+
+                        image = convertArray2DToImage(cimg);
+                        image.Save(DIR + imageName, ImageFormat.Jpeg);
+
+                        Pen pen = new Pen(Color.Red);
+                        System.Drawing.Rectangle rect = new System.Drawing.Rectangle(X, Y - 60, 150, 150);
+                        Graphics gr = Graphics.FromImage(image);
+                        gr.DrawRectangle(pen, rect);
+
+                        pic_camera.Image = image;
+
+                        foreach (var line in lines)
+                        {
+                            line.Dispose();
+                        }
+                        temp.Dispose();
+                        FaceExtractionRecognition();
                     }
                 }
-            }
+                }
             catch (Exception e)
             {
                 Console.WriteLine(e);
@@ -314,9 +310,6 @@ namespace testdlibdotnetNuget
                     Console.WriteLine("image file dosen't exist  ");
                     return null;
                 }
-                var detector = this.detector;
-                var sp = this.sp;
-                var net = this.net;
 
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
@@ -329,12 +322,12 @@ namespace testdlibdotnetNuget
                         var faceChip = Dlib.ExtractImageChip<RgbPixel>(img, faceChipDetail);
                         faces.Add(faceChip);
                     }
-                    
+                                        
                     if (!faces.Any())
                     {
                         MethodInvoker inv = delegate
                         {
-                            this.lbl_status.Text = "Error: No face found";
+                            this.lbl_status.Text = "11Error: No face found";
                             lbl_status.ForeColor = Color.DarkRed;
                         };
                         this.Invoke(inv);
@@ -350,10 +343,16 @@ namespace testdlibdotnetNuget
                         this.Invoke(inv);
                         return null;
                     }
+                    if (faces.Count == 1) {
+                        MethodInvoker inv = delegate
+                        {
+                            this.lbl_status.Text = "";
+                            lbl_status.ForeColor = Color.DarkRed;
+                        };
+                        this.Invoke(inv);
+                    }
 
                     var faceDescriptors = net.Operator(faces);
-                    
-                    var trans = Dlib.Trans(faceDescriptors[0]);
 
                     string filePath = DIR + "description.text";
                     if (File.Exists(filePath) == true)
@@ -515,7 +514,7 @@ namespace testdlibdotnetNuget
             {
                 recognitionWebcam();
                 //FaceExtractionRecognition("recognition.jpg");
-                FaceExtractionRecognition();
+                //FaceExtractionRecognition();
 
             });
         }
