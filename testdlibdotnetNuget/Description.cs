@@ -31,7 +31,6 @@ namespace testdlibdotnetNuget
         {
             if (this.rollNo == ((Description)obj).rollNo)
             {
-                Console.WriteLine("Equals");
                 return true;
             }
             else

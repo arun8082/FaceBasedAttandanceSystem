@@ -38,8 +38,7 @@ namespace testdlibdotnetNuget
         private string email;
         private string institute;
         private string seq = "";
-
-        private Stack<Description> stack;
+        private System.Collections.Generic.Queue<Description> queue;
 
         public Form1()
         {
@@ -55,7 +54,7 @@ namespace testdlibdotnetNuget
             sp = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
             net = DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
 
-            stack = new Stack<Description>(3);
+            queue = new System.Collections.Generic.Queue<Description>(3);
         }
 
         #region recognitionButton
@@ -150,20 +149,28 @@ namespace testdlibdotnetNuget
                             X = point.X;
                             Y = point.Y;
                         }
-                        
+
                         //delete previous image file
                         if (File.Exists(DIR + imageName))
                         {
                             File.Delete(DIR + imageName);
                         }
 
-                        image = convertArray2DToImage(cimg);
-                        image.Save(DIR + imageName, ImageFormat.Jpeg);
+                        //image = convertArray2DToImage(cimg);
+                        //image.Save(DIR + imageName, ImageFormat.Jpeg);
+                        Dlib.SaveJpeg(cimg, DIR + imageName);
 
-                        Pen pen = new Pen(Color.Red);
-                        System.Drawing.Rectangle rect = new System.Drawing.Rectangle(X, Y - 60, 150, 150);
-                        Graphics gr = Graphics.FromImage(image);
-                        gr.DrawRectangle(pen, rect);
+                        FileStream fs = new FileStream(DIR + imageName, FileMode.Open, FileAccess.Read);
+                        image = Image.FromStream(fs);
+                        fs.Close();
+
+                        if (X != 0 && Y != 0) { 
+                            Pen pen = new Pen(Color.Red);
+                            System.Drawing.Rectangle rect = new System.Drawing.Rectangle(X, Y - 60, 150, 150);
+                            Graphics gr = Graphics.FromImage(image);
+                            gr.DrawRectangle(pen, rect);
+                            gr.ResetClip();
+                        }
 
                         pic_camera.Image = image;
 
@@ -182,24 +189,13 @@ namespace testdlibdotnetNuget
         {
             try
             {
-                string filePath = DIR + "description.text";
-
+                //Check for current image
                 if (!File.Exists(DIR + imageName))
                 {
                     Console.WriteLine("image file dosen't exist  ");
                     return null;
                 }
-
-                if(File.Exists(DIR + "recognition.jpg"))
-                {
-                    File.Delete(DIR + "recognition.jpg");
-                }
-
-                if (File.Exists(filePath) == true)
-                {
-                    File.Delete(filePath);
-                }
-
+                
                 using (var img = Dlib.LoadImageAsMatrix<RgbPixel>(DIR + imageName))
                 using (img)
                 {
@@ -216,7 +212,7 @@ namespace testdlibdotnetNuget
                     {
                         MethodInvoker inv = delegate
                         {
-                            this.lbl_status.Text = "11Error: No face found";
+                            this.lbl_status.Text = "Error: No face found";
                             lbl_status.ForeColor = Color.DarkRed;
                         };
                         this.Invoke(inv);
@@ -240,7 +236,7 @@ namespace testdlibdotnetNuget
                         };
                         this.Invoke(inv);
                     }
-
+                    
                     var faceDescriptors = net.Operator(faces);                    
 
                     descriptionList = new List<double>();
@@ -248,96 +244,76 @@ namespace testdlibdotnetNuget
                     {
                         descriptionList.Add(face);
                     }
-                    
+                                        
                     //save image
                     Dlib.SaveJpeg(faces[0], DIR+"recognition.jpg");
-                    
+
+                    //Check the descriptionsList retrieved from DB
                     if (list != null)
                     {
-                        double distance = 1;
+                        double maxDistance = 5;
                         double calDistance = 0;
                         int minPosition = -1;
                         int i = 0;
 
-                        foreach (Description desc in list) {
+                        foreach (Description desc in list)
+                        {
+                            //Distance b/w current image's face description and db face's description
                             calDistance = calculateDistance(descriptionList, desc.description);
-                            if (distance > calDistance)
+                            if (calDistance < maxDistance)
                             {
-                                distance = calDistance;
+                                maxDistance = calDistance;
                                 minPosition = i;
                             }
                             i++;
                         }
-                        if (distance != 1 && minPosition != -1)
+                        //if distance b/w current image's description and db
+                        if (maxDistance <= 0.58)
                         {
-                            Console.WriteLine("Roll: "+ list.ElementAt(minPosition).rollNo + "name: " + list.ElementAt(minPosition).studentName + " ïmg: " + list.ElementAt(minPosition).image + " dis: " + calDistance);
-                            if (calDistance < 0.58)
+                            Console.WriteLine("275Roll: "+ list.ElementAt(minPosition).rollNo + "name: " + list.ElementAt(minPosition).studentName + " ïmg: " + list.ElementAt(minPosition).image + " dis: " + maxDistance);
+                            queue.Enqueue(list.ElementAt(minPosition));
+                            Console.WriteLine("\nCount after if+ " + queue.Count);
+                            if (queue.Count < 3)
                             {
-                                if (stack.Count>0 && stack.Count<=3)
-                                {
-                                    if (list.ElementAt(minPosition).Equals(stack.Peek()))
-                                    {
-                                        stack.Push(list.ElementAt(minPosition));
-                                    }
-                                    else
-                                    {
-                                        stack.Clear();
-                                        stack.Push(list.ElementAt(minPosition));
-                                    }
-                                    return "";
-                                }
-                                else if(stack.Count==0)
-                                {
-                                    stack.Push(list.ElementAt(minPosition));
-                                    return "";
-                                }
-                                Console.WriteLine("\n\nCount after if+ "+stack.Count);
-                                if (stack.Count > 3) {
-                                    Description desc1 = stack.Pop();
-                                    Description desc2 = stack.Pop();
-                                    Description desc3 = stack.Pop();                                    
-                                    if((desc1.Equals(desc2) && desc2.Equals(desc3) )||(desc2.Equals(desc3) && desc1.Equals(desc3))){
-                                        //return desc2.studentName;
-                                        MethodInvoker inv = delegate
-                                        {
-                                            this.lbl_status.Text = desc1.studentName;
-                                            lbl_status.ForeColor = Color.ForestGreen;
-                                        };
-                                        this.Invoke(inv);
-                                        if (DBHandler.insertOrUpdateAttandance(desc1.rollNo.ToString()))
-                                        {
-                                            Console.WriteLine("Attandance Marked+ " + desc1.rollNo.ToString());
-                                        }
-                                    }
-                                }
-                                /*
-                                MethodInvoker inv = delegate
-                                {
-                                    this.lbl_status.Text = list.ElementAt(minPosition).studentName;
-                                    lbl_status.ForeColor = Color.ForestGreen;
-                                };
-                                this.Invoke(inv);
-                                if (DBHandler.insertOrUpdateAttandance(list.ElementAt(minPosition).rollNo.ToString()))
-                                {
-                                    Console.WriteLine("Attandance Marked+ "+ list.ElementAt(minPosition).rollNo.ToString());
-                                }
-                                */
+                                return "";
                             }
-                            else
+                            if (queue.Count >= 3)
                             {
-                                Console.WriteLine("recog:   d: " + distance + " po: " + minPosition);
-                                MethodInvoker inv = delegate
+                                Description desc1 = queue.Dequeue();
+                                Description desc2 = queue.Dequeue();
+                                Description desc3 = queue.Dequeue();
+
+                                Console.WriteLine("292: "+desc1.rollNo+" "+desc2.rollNo+" "+desc3.rollNo);
+                                //if desc1==desc2==desc3
+                                if (desc1.Equals(desc2) && desc2.Equals(desc3))
                                 {
-                                    this.lbl_status.Text = "Unknown";
-                                    lbl_status.ForeColor = Color.DarkRed;
-                                };
-                                this.Invoke(inv);
-                                Console.WriteLine("Unknown");
+                                    MethodInvoker inv = delegate
+                                    {
+                                        this.lbl_status.Text = desc1.studentName;
+                                        lbl_status.ForeColor = Color.ForestGreen;
+                                    };
+                                    this.Invoke(inv);
+                                    if (DBHandler.insertOrUpdateAttandance(desc1.rollNo.ToString()))
+                                    {
+                                        Console.WriteLine("Attandance Marked+ " + desc1.rollNo.ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("309recog:   d: " + maxDistance + " po: " + minPosition);
+                                    MethodInvoker inv = delegate
+                                    {
+                                        this.lbl_status.Text = "Unknown";
+                                        lbl_status.ForeColor = Color.DarkRed;
+                                    };
+                                    this.Invoke(inv);
+                                    Console.WriteLine("Unknown");
+                                }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("recog:   d: "+distance+" po: "+minPosition);
+                            Console.WriteLine("321recog:   d: " + maxDistance + " po: " + minPosition+" "+list.ElementAt(minPosition).rollNo);
                             MethodInvoker inv = delegate
                             {
                                 this.lbl_status.Text = "Unknown";
@@ -353,6 +329,11 @@ namespace testdlibdotnetNuget
 
                     foreach (var face in faces)
                         face.Dispose();
+                    //Delete previous face image
+                    if (File.Exists(DIR + "recognition.jpg"))
+                    {
+                        File.Delete(DIR + "recognition.jpg");
+                    }
                 }
                 return name;
             }
@@ -797,12 +778,15 @@ namespace testdlibdotnetNuget
         #endregion enrollmentButton
 
         #region viewButtons
-
         private void Webcam()
         {
             try
             {
                 var cap = new OpenCvSharp.VideoCapture(0);
+                if(File.Exists(DIR + imageName))
+                {
+                    File.Delete(DIR + imageName);
+                }
                 if (!cap.IsOpened())
                 {
                     MethodInvoker inv = delegate
@@ -815,7 +799,7 @@ namespace testdlibdotnetNuget
                 }
 
                 // Grab a frame
-                var temp = new OpenCvSharp.Mat();
+                var temp = new OpenCvSharp.Mat();                    
                 if (!cap.Read(temp))
                 {
                     return;
@@ -840,11 +824,18 @@ namespace testdlibdotnetNuget
                     {
                         File.Delete(DIR + imageName);
                     }
-                    temp.Dispose();
 
                     image = convertArray2DToImage(cimg);
                     image.Save(DIR + imageName, ImageFormat.Jpeg);
+                    //Dlib.SaveJpeg(cimg, DIR + imageName);
+
+                    //FileStream fs = new FileStream(DIR + imageName, FileMode.Open, FileAccess.Read);
+                    //image = Image.FromStream(fs);
+                    //fs.Close();
+
                     pic_camera.Image = image;
+                    temp.Dispose();
+
                 }
             }
             catch (Exception e)

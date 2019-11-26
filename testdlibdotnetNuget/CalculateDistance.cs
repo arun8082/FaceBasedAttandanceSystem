@@ -23,6 +23,7 @@ namespace testdlibdotnetNuget
         public CalculateDistance()
         {
             InitializeComponent();
+            this.FormClosing += Form1_FormClosing;
             detector = Dlib.GetFrontalFaceDetector();
             sp = ShapePredictor.Deserialize("shape_predictor_68_face_landmarks.dat");
             net = DlibDotNet.Dnn.LossMetric.Deserialize("dlib_face_recognition_resnet_model_v1.dat");
@@ -77,11 +78,41 @@ namespace testdlibdotnetNuget
 
             if (description1 != null && description2 != null)
             {
-                Console.WriteLine(string.Join(",", description1.ToArray()));
-                Console.WriteLine(string.Join(",", description2.ToArray()));
+                //Console.WriteLine(string.Join(",", description1.ToArray()));
+                //Console.WriteLine(string.Join(",", description2.ToArray()));
                 double distance = calculateDistance(description1, description2);
                 lbl_status.Text = "Distance= " + distance;
             }
+        }
+
+        void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (File.Exists(imageDirectory + @"/image1.jpg"))
+                {
+                    File.Delete(imageDirectory + @"/image1.jpg");
+                }
+                if (File.Exists(imageDirectory + @"/image2.jpg"))
+                {
+                    File.Delete(imageDirectory + @"/image2.jpg");
+                }
+                if (File.Exists(imageDirectory + @"/face_image1.jpg"))
+                {
+                    File.Delete(imageDirectory + @"/face_image1.jpg");
+                }
+                if (File.Exists(imageDirectory + @"/face_image2.jpg"))
+                {
+                    File.Delete(imageDirectory + @"/face_image2.jpg");
+                }
+            }
+            // Prompt user to save his data
+
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+
+            }
+        // Autosave and clear up ressources
         }
 
         #region FaceMatching

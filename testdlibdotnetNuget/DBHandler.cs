@@ -245,7 +245,7 @@ namespace testdlibdotnetNuget
                 {
                     str = "update attendance set exit_dateTime=now()::timestamp(0) where roll_no={0}";
                     sqlstr = string.Format(str, rollNo);
-                    Console.WriteLine(sqlstr);
+                    //Console.WriteLine(sqlstr);
                     cmd = new NpgsqlCommand(sqlstr);
                     cmd.Connection = con;
                     cmd.CommandType = CommandType.Text;
