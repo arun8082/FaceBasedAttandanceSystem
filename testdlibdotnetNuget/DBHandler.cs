@@ -35,7 +35,7 @@ namespace testdlibdotnetNuget
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("connection  " + e.Message);
+                    Program.log(e.ToString());
                     return null;
                 }
             }
@@ -54,7 +54,7 @@ namespace testdlibdotnetNuget
             }
             catch(Exception e)
             {
-                Console.WriteLine("close con  " + e.Message);
+                Program.log(e.ToString());
                 return false;
             }
         }
@@ -78,7 +78,7 @@ namespace testdlibdotnetNuget
                     return true;
                 }catch(Exception e)
                 {
-                    Console.WriteLine("InsertOrUpdateDescription  " + e);
+                    Program.log(e.ToString());
                 }
                 finally
                 {
@@ -112,7 +112,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
-                Console.WriteLine("InsertOrUpdateDescription  " + e);
+                Program.log(e.ToString());
             }
             finally
             {
@@ -141,7 +141,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
-                Console.WriteLine("InsertOrUpdateDescription  " + e);
+                Program.log(e.ToString());
             }
             finally
             {
@@ -186,7 +186,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
-                Console.WriteLine("getRecognitionDetails  " + e);
+                Program.log(e.ToString());
             }
             finally
             {
@@ -218,7 +218,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
-                Console.WriteLine("InsertOrUpdateDescription  " + e);
+                Program.log(e.ToString());
             }
             finally
             {
@@ -272,7 +272,7 @@ namespace testdlibdotnetNuget
                 }                
             }catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Program.log(ex.ToString());
             }
             finally
             {
