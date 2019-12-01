@@ -47,6 +47,7 @@ namespace testdlibdotnetNuget
                 Directory.CreateDirectory(DIR);
             }
             imageDir = ConfigurationManager.AppSettings["imageDirPath"];
+            //imageDir = Application.StartupPath + @"\student_images";
             rdbtn_webcam.Checked = true;
 
             list = DBHandler.getRecognitionDetails();
@@ -83,11 +84,13 @@ namespace testdlibdotnetNuget
             camStatus = false;
             lbl_status.Text = "Camera started";
             lbl_status.ForeColor = Color.Blue;
-            _canceller = new CancellationTokenSource();
             camStatus = false;
             await Task.Run(() =>
             {
-                recognitionWebcam();
+                //while (!camStatus)
+                //{
+                    recognitionWebcam();
+                //}
             });
         }
 
@@ -96,15 +99,13 @@ namespace testdlibdotnetNuget
             btn_enrollement.Enabled = true;
             btn_recognition.Enabled = true;
             btn_enrollFromFile.Enabled = true;
-            btn_stopRecognition.Enabled = false;
             btn_stopRecognition.Visible = false;
+            pic_camera.Image = null;
             if (_canceller != null)
             {
                 camStatus = true;
                 _canceller.Dispose();
-                _canceller = null;
             }
-            pic_camera.Image = null;
         }
 
         private void recognitionWebcam()
@@ -128,13 +129,25 @@ namespace testdlibdotnetNuget
                 {
                     // Grab a frame
                     var temp = new OpenCvSharp.Mat();
+                    //Console.WriteLine("size: " + temp.ElemSize() + " " + temp.ElemSize1() + " " + temp);
                     if (!cap.Read(temp))
                     {
+                        camStatus = true;
+                        //return;
                         break;
                     }
 
                     var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
-                    Marshal.Copy(temp.Data, array, 0, array.Length);
+                    try
+                    {
+                        //temp= new OpenCvSharp.Mat();
+                        Marshal.Copy(temp.Data, array, 0, array.Length);
+                    }
+                    catch (ArgumentNullException ex)
+                    {
+                        Console.WriteLine("in catch " + ex.Message);
+                        continue;
+                    }
                     using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
                     {
                         // Detect faces 
@@ -164,7 +177,8 @@ namespace testdlibdotnetNuget
                         image = Image.FromStream(fs);
                         fs.Close();
 
-                        if (X != 0 && Y != 0) { 
+                        if (X != 0 && Y != 0)
+                        {
                             Pen pen = new Pen(Color.Red);
                             System.Drawing.Rectangle rect = new System.Drawing.Rectangle(X, Y - 60, 150, 150);
                             Graphics gr = Graphics.FromImage(image);
@@ -174,8 +188,9 @@ namespace testdlibdotnetNuget
 
                         pic_camera.Image = image;
 
-                        temp.Dispose();
                         extractAndMatchFace();
+                        temp.Release();
+                        temp.Dispose();
                     }
                 }
             }
@@ -351,8 +366,6 @@ namespace testdlibdotnetNuget
             return null;
         }
         
-
-        
         #endregion recognitionButton
 
         #region enrollmentButton
@@ -363,7 +376,7 @@ namespace testdlibdotnetNuget
             tab_1.SelectedIndex = 0;
             ((Control)tab_enrollment).Enabled = true;
             pnl_viewList.Visible = true;
-            pnl_viewList.Enabled = false;
+            //pnl_viewList.Enabled = false;
         }
         
         private void captureImage(string id) {
@@ -424,7 +437,6 @@ namespace testdlibdotnetNuget
                     }
 
                     var faceDescriptors = net.Operator(faces);
-                    var trans = Dlib.Trans(faceDescriptors[0]);
 
                     string filePath = DIR + "description.text";
                     if (File.Exists(filePath) == true)
@@ -449,7 +461,7 @@ namespace testdlibdotnetNuget
 
                     MethodInvoker inv = delegate
                     {
-                        this.lbl_status.Text = rollNo + " image is captured successfully";
+                        this.lbl_status.Text = id + " image is captured successfully";
                         lbl_status.ForeColor = Color.ForestGreen;
                     };
                     this.Invoke(inv);
@@ -553,17 +565,17 @@ namespace testdlibdotnetNuget
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            rollNo = txt_rollNo.Text;
-            course = txt_course.Text;
-            name = txt_name.Text;
-            dob = txt_dob.Text;
-            email = txt_email.Text;
-            institute = txt_institute.Text;
+            rollNo = txt_rollNo.Text.Trim();
+            course = txt_course.Text.Trim();
+            name = txt_name.Text.Trim();
+            dob = txt_dob.Text.Trim();
+            email = txt_email.Text.Trim();
+            institute = txt_institute.Text.Trim();
             if (validateData() == true)
             {
                 lbl_status.Text = "Data saved successfully";
                 lbl_status.ForeColor = Color.ForestGreen;
-                DBHandler.InsertEnrollmenmtData(rollNo, name, course,dob,email,institute,"1");
+                //DBHandler.InsertEnrollmenmtData(rollNo, name, course,dob,email,institute,"1");
                 seq = "saved";
 
                 tab_1.SelectedIndex = 1;
@@ -594,7 +606,7 @@ namespace testdlibdotnetNuget
                 lbl_status.ForeColor = Color.DarkRed;
                 return;
             }
-            bool res=DBHandler.InsertEnrollmenmtData(rollNo,course,name,dob,email,institute,"1");
+            bool res=DBHandler.InsertEnrollmenmtData(rollNo.Trim(), name.Trim(), course.Trim(), dob.Trim(), email.Trim(), institute.Trim(), "1");
             if (res == true)
             {
                 lbl_status.Text = "Data submitted successfully";
@@ -611,32 +623,39 @@ namespace testdlibdotnetNuget
 
         private bool validateData()
         {
-            if(string.IsNullOrEmpty(rollNo))
+            Regex Pattern = new Regex("[0-9]$", RegexOptions.Compiled);
+            if (string.IsNullOrEmpty(rollNo.Trim()))
             {
                 lbl_status.Text = "Please fill rollNO";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
-            }else if (DBHandler.checkRollnoExist(rollNo))
+            }
+            else if (!Pattern.IsMatch(rollNo.Trim())) {
+                lbl_status.Text = "Only digits are allowed as RollNo";
+                lbl_status.ForeColor = Color.DarkRed;
+                return false;
+            }
+            else if (DBHandler.checkRollnoExist(rollNo.Trim()))
             {
                 lbl_status.Text = "This roll no already exist";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
 
-            Regex Pattern = new Regex("[a-zA-z ]$", RegexOptions.Compiled);
-            if ( string.IsNullOrEmpty(name)) {
+            Pattern = new Regex("[a-zA-z ]$", RegexOptions.Compiled);
+            if ( string.IsNullOrEmpty(name.Trim())) {
                 lbl_status.Text = "Please fill Name";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
-            else if (!Pattern.IsMatch(name))
+            else if (!Pattern.IsMatch(name.Trim()))
             {
                 lbl_status.Text = "Please fill valid name. Only Chars are allowed";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
 
-            if (string.IsNullOrEmpty(dob))
+            if (string.IsNullOrEmpty(dob.Trim()))
             {
                 lbl_status.Text = "Please fill dob";
                 lbl_status.ForeColor = Color.DarkRed;
@@ -644,29 +663,41 @@ namespace testdlibdotnetNuget
             }
 
             Pattern = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email.Trim()))
             {
                 lbl_status.Text = "Please fill email";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
-            else if (!Pattern.IsMatch(email))
+            else if (!Pattern.IsMatch(email.Trim()))
             {
                 lbl_status.Text = "Please fill valid email id";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
-
-            if (string.IsNullOrEmpty(course))
+            Pattern = new Regex(@"^([^0-9][A-Za-z]*( )?(\.)?)[0-9]*|^([^0-9][A-Za-z]*(\.)?( )?)[0-9]*$", RegexOptions.Compiled);
+            if (string.IsNullOrEmpty(course.Trim()))
             {
                 lbl_status.Text = "Please fill course";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
-            }   
+            }
+            else if (!Pattern.IsMatch(course.Trim()))
+            {
+                lbl_status.Text = "Invalid Course name";
+                lbl_status.ForeColor = Color.DarkRed;
+                return false;
+            }
 
-            if (string.IsNullOrEmpty(institute))
+            if (string.IsNullOrEmpty(institute.Trim()))
             {
                 lbl_status.Text = "Please fill institution";
+                lbl_status.ForeColor = Color.DarkRed;
+                return false;
+            }
+            else if (!Pattern.IsMatch(institute.Trim()))
+            {
+                lbl_status.Text = "invalid institute name";
                 lbl_status.ForeColor = Color.DarkRed;
                 return false;
             }
@@ -714,20 +745,19 @@ namespace testdlibdotnetNuget
         {
             try
             {
-                string imageDir = AppContext.BaseDirectory + @"\student_images";
                 string studentRollno;
                 string studentName;
 
-                string studentCourse=(string.IsNullOrEmpty(course))?"PG-DAC": course;
+                string studentCourse = (string.IsNullOrEmpty(course)) ? "PG-DAC" : course;
                 string studentEmail = (string.IsNullOrEmpty(email)) ? "mail@mail.com" : course;
                 string studentInstitute = (string.IsNullOrEmpty(institute)) ? "CDAC,Juhu" : course;
                 string studentCenterId = "1";
 
-                Dictionary<string, string> dict=new Dictionary<string, string>();
+                Dictionary<string, string> dict = new Dictionary<string, string>();
                 /*Read mapping.csv file and store all the mapping data into dictionary
                  * to get name corresponding roll number
                  */
-                string[] csvData = File.ReadAllLines(imageDir + @"\mapping.csv");
+                string[] csvData = File.ReadAllLines(imageDir + @"mapping.csv");
                 if (csvData.Length > 0)
                 {
                     foreach (string line in csvData)
@@ -744,15 +774,16 @@ namespace testdlibdotnetNuget
                 foreach (string studentImageDir in Directory.GetDirectories(imageDir))
                 {
                     studentRollno = studentImageDir.Substring(studentImageDir.LastIndexOf('\\') + 1);
-                    lbl_status.Text = studentRollno+" Data is capturing.......";
+                    lbl_status.Text = studentRollno + " Data is capturing.......";
                     lbl_status.ForeColor = Color.ForestGreen;
                     //Console.WriteLine(studentRollno + "\n");
                     foreach (string studentImage in Directory.GetFiles(studentImageDir))
                     {
                         if (!DBHandler.checkRollnoExist(studentRollno))
                         {
-                            if (dict.TryGetValue(studentRollno,out studentName)) {
-                                bool status = DBHandler.InsertEnrollmenmtData(studentRollno, studentName,studentCourse,DateTime.Now.ToString(),studentEmail,studentInstitute,studentCenterId);
+                            if (dict.TryGetValue(studentRollno, out studentName))
+                            {
+                                bool status = DBHandler.InsertEnrollmenmtData(studentRollno, studentName, studentCourse, DateTime.Now.ToString(), studentEmail, studentInstitute, studentCenterId);
                                 if (status)
                                 {
                                     rollNo = studentRollno;
@@ -770,8 +801,26 @@ namespace testdlibdotnetNuget
                     }
                     lbl_status.Text = null;
                 }
-            }catch(Exception ex)
+            }
+            catch (DirectoryNotFoundException dex) {
+                MethodInvoker inv = delegate
+                {
+                    this.lbl_status.Text = imageDir+" Directory not found";
+                    lbl_status.ForeColor = Color.DarkRed;
+                };
+                this.Invoke(inv);
+            }catch(FileNotFoundException fex)
             {
+                MethodInvoker inv = delegate
+                {
+                    this.lbl_status.Text = imageDir + @"\mapping.csv"+" File doesn't exist";
+                    lbl_status.ForeColor = Color.DarkRed;
+                };
+                this.Invoke(inv);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(""+ex, "Error ",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
             }
         }
@@ -783,10 +832,6 @@ namespace testdlibdotnetNuget
             try
             {
                 var cap = new OpenCvSharp.VideoCapture(0);
-                if(File.Exists(DIR + imageName))
-                {
-                    File.Delete(DIR + imageName);
-                }
                 if (!cap.IsOpened())
                 {
                     MethodInvoker inv = delegate
