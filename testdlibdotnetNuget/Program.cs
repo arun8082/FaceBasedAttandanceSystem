@@ -22,6 +22,7 @@ namespace testdlibdotnetNuget
 
         public static void log(string message) {
             string logFile = Application.StartupPath + @"\log\error.log";
+            Console.WriteLine("\n\nLog file ");
             try
             {
                 if (!Directory.Exists(Application.StartupPath + @"\log"))

@@ -196,6 +196,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine(e);
             }
         }
@@ -354,6 +355,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine("face ex: "+e.Message);
             }
             finally
@@ -476,6 +478,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine(e.Message);
                 return null;
             }
@@ -559,6 +562,7 @@ namespace testdlibdotnetNuget
             }
             catch(Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine("resetImage:  " + e.Message);
             }
         }
@@ -752,6 +756,7 @@ namespace testdlibdotnetNuget
                 string studentEmail = (string.IsNullOrEmpty(email)) ? "mail@mail.com" : course;
                 string studentInstitute = (string.IsNullOrEmpty(institute)) ? "CDAC,Juhu" : course;
                 string studentCenterId = "1";
+                string referesh = "................................................................................................";
 
                 Dictionary<string, string> dict = new Dictionary<string, string>();
                 /*Read mapping.csv file and store all the mapping data into dictionary
@@ -774,11 +779,14 @@ namespace testdlibdotnetNuget
                 foreach (string studentImageDir in Directory.GetDirectories(imageDir))
                 {
                     studentRollno = studentImageDir.Substring(studentImageDir.LastIndexOf('\\') + 1);
-                    lbl_status.Text = studentRollno + " Data is capturing.......";
-                    lbl_status.ForeColor = Color.ForestGreen;
+                    int i = 1;
                     //Console.WriteLine(studentRollno + "\n");
                     foreach (string studentImage in Directory.GetFiles(studentImageDir))
                     {
+                        lbl_status.Refresh();
+                        lbl_status.Text = studentRollno + " Data is capturing."+referesh.Substring(0,i++);
+                        lbl_status.ForeColor = Color.ForestGreen;
+                        lbl_status.Refresh();
                         if (!DBHandler.checkRollnoExist(studentRollno))
                         {
                             if (dict.TryGetValue(studentRollno, out studentName))
@@ -800,6 +808,7 @@ namespace testdlibdotnetNuget
                         }
                     }
                     lbl_status.Text = null;
+                    lbl_status.Refresh();
                 }
             }
             catch (DirectoryNotFoundException dex) {
@@ -809,7 +818,9 @@ namespace testdlibdotnetNuget
                     lbl_status.ForeColor = Color.DarkRed;
                 };
                 this.Invoke(inv);
-            }catch(FileNotFoundException fex)
+                Program.log(dex.ToString());
+            }
+            catch (FileNotFoundException fex)
             {
                 MethodInvoker inv = delegate
                 {
@@ -817,11 +828,13 @@ namespace testdlibdotnetNuget
                     lbl_status.ForeColor = Color.DarkRed;
                 };
                 this.Invoke(inv);
+                Program.log(fex.ToString());
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show(""+ex, "Error ",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(""+e, "Error ",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.log(e.ToString());
+                Console.WriteLine(e.Message);
             }
         }
         #endregion enrollmentButton
@@ -885,6 +898,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine(e);
             }
         }
@@ -1484,6 +1498,7 @@ namespace testdlibdotnetNuget
 
             }catch(Exception e)
             {
+                Program.log(e.ToString());
                 Console.WriteLine("Error: calculateDistancesBWMultiImages\n" + e+"\n");
             }
 
@@ -1552,6 +1567,7 @@ namespace testdlibdotnetNuget
             }
             catch (Exception e)
             {
+                Program.log(e.ToString());
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return null;
