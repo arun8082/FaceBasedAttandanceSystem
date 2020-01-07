@@ -2722,3 +2722,189 @@ Object name: 'Form1'.
    at System.Windows.Forms.Control.MarshaledInvoke(Control caller, Delegate method, Object[] args, Boolean synchronous)
    at System.Windows.Forms.Control.Invoke(Delegate method, Object[] args)
    at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 316
+07-01-2020 16:09:45		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:47		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:49		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:51		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:53		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:54		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:56		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:09:58		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:10:00		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:05		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:07		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:46		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:48		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:50		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:53		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:55		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:57		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:11:59		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:00		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:02		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:08		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:10		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:12		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:14		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:12:16		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 830
+07-01-2020 16:13:59		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:14:10		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:14:19		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:14:43		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:26:56		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:47:41		System.IO.IOException: The process cannot access the file 'D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\images\image.jpg' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 852
+07-01-2020 16:47:42		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 831
+07-01-2020 16:48:25		System.IO.IOException: The process cannot access the file 'D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\images\image.jpg' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 852
+07-01-2020 16:48:26		System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Runtime.InteropServices.Marshal.CopyToManaged(IntPtr source, Object destination, Int32 startIndex, Int32 length)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 831
+07-01-2020 16:49:00		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:50:03		System.IO.IOException: The process cannot access the file 'D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\images\image.jpg' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalDelete(String path, Boolean checkHost)
+   at testdlibdotnetNuget.Form1.Webcam() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 852
+07-01-2020 16:50:04		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:50:11		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:50:15		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: ""
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertFaceDescription(Double[] description, String faceImageName, String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 105
+07-01-2020 16:59:59		System.ArgumentException: Filter string you provided is not valid. The filter string must contain a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options must also be separated by the vertical bar. Example: "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+   at System.Windows.Forms.FileDialog.set_Filter(String value)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 741
+07-01-2020 17:05:38		System.ArgumentException: Filter string you provided is not valid. The filter string must contain a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options must also be separated by the vertical bar. Example: "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+   at System.Windows.Forms.FileDialog.set_Filter(String value)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 741
+07-01-2020 17:05:52		System.ArgumentException: Filter string you provided is not valid. The filter string must contain a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options must also be separated by the vertical bar. Example: "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+   at System.Windows.Forms.FileDialog.set_Filter(String value)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 741
+07-01-2020 17:06:19		System.ArgumentException: Filter string you provided is not valid. The filter string must contain a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options must also be separated by the vertical bar. Example: "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+   at System.Windows.Forms.FileDialog.set_Filter(String value)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 741

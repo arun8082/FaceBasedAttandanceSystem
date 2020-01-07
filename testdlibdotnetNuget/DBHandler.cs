@@ -319,10 +319,12 @@ namespace testdlibdotnetNuget
             {
                 try
                 {
-                    string str = "select sidno,applicationid,firstname,middlename,lastname,gender,dob,pob,nationality,identification_mark,sid_doi,sid_doe,cdcno,transactionid,sid_status,countrycode,sid_poi,indos_no,sid_counter,barcode,document_id,document,emailid" +
-                        " from \"SIDDB\".sid_view where sidno='{0}' or indos_no='{0}'and document_id='102'";
+                    string str = "select sidno,applicationid,firstname,middlename,lastname,gender,dob,pob,nationality," +
+                        "identification_mark,sid_doi,sid_doe,cdcno,transactionid,sid_status,countrycode,sid_poi,indos_no," +
+                        "sid_counter,barcode,document_id,document,emailid from \"SIDDB\".sid_view where (sidno='{0}' " +
+                        "or indos_no='{0}') and document_id='100'";
                     string sqlstr = string.Format(str, sidNo);
-                    Console.WriteLine(sqlstr);
+                    //Console.WriteLine(sqlstr);
                     GetSIDConnection().Open();
                     NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
                     cmd.CommandType = CommandType.Text;
@@ -360,8 +362,7 @@ namespace testdlibdotnetNuget
                     seafarerApplication.document = documemt;
                     seafarerApplication.emailid = reader.GetString(22);
 
-
-                    Console.WriteLine("GetSeafarerApplication: " + seafarerApplication);
+                    //Console.WriteLine("GetSeafarerApplication: " + seafarerApplication);
                 }
                 catch (Exception ex)
                 {                    

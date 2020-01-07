@@ -367,7 +367,7 @@ namespace testdlibdotnetNuget
             tab_1.SelectedIndex = 0;
             ((Control)tab_enrollment).Enabled = true;
             pnl_viewList.Visible = true;
-            pnl_viewList.Enabled = false;
+            //pnl_viewList.Enabled = false;
         }
         
         private void captureImage(string id) {
@@ -726,6 +726,7 @@ namespace testdlibdotnetNuget
         {
             try
             {
+                string filesDir = "";
                 string studentRollno;
                 string studentName;
 
@@ -735,11 +736,25 @@ namespace testdlibdotnetNuget
                 string studentCenterId = "1";
                 string referesh = "................................................................................................";
 
+                OpenFileDialog fdlg = new OpenFileDialog();
+                fdlg.Title = "Choose mapping file";
+                fdlg.Filter = "All files (*.*)|*.*|CSV Files (*.csv)|*.csv";
+                fdlg.FilterIndex = 2;
+                fdlg.RestoreDirectory = true;
+                if (fdlg.ShowDialog() == DialogResult.OK)
+                {
+                    filesDir=fdlg.FileName.Substring(0, fdlg.FileName.LastIndexOf('\\'));
+                }
                 Dictionary<string, string> dict = new Dictionary<string, string>();
                 /*Read mapping.csv file and store all the mapping data into dictionary
                  * to get name corresponding roll number
                  */
-                string[] csvData = File.ReadAllLines(imageDir + @"mapping.csv");
+                if (!File.Exists(fdlg.FileName))
+                {
+                    lblStatus("Mapping file doesn't exist");
+                    return;
+                }
+                string[] csvData = File.ReadAllLines(fdlg.FileName);
                 if (csvData.Length > 0)
                 {
                     foreach (string line in csvData)
@@ -753,14 +768,15 @@ namespace testdlibdotnetNuget
                     }
                 }
 
-                foreach (string studentImageDir in Directory.GetDirectories(imageDir))
+                foreach (string studentImageDir in Directory.GetDirectories(filesDir))
                 {
                     studentRollno = studentImageDir.Substring(studentImageDir.LastIndexOf('\\') + 1);
                     int i = 1;
                     //Console.WriteLine(studentRollno + "\n");
                     foreach (string studentImage in Directory.GetFiles(studentImageDir))
                     {
-                        lblStatus(studentRollno + " Data is capturing."+referesh.Substring(0,i++),"SUCCESS");
+                        //Console.WriteLine(studentRollno + " Data is capturing. " + studentImage + referesh.Substring(0, i++));
+                        lblStatus(studentRollno + " Data is capturing. " + studentImage + referesh.Substring(0, i++), "SUCCESS");
                         if (!DBHandler.checkRollnoExist(studentRollno))
                         {
                             if (dict.TryGetValue(studentRollno, out studentName))
@@ -805,9 +821,10 @@ namespace testdlibdotnetNuget
         #region viewButtons
         private void Webcam()
         {
+            dynamic cap = null;
             try
             {
-                var cap = new OpenCvSharp.VideoCapture(0);
+                cap = new OpenCvSharp.VideoCapture(0);
                 if (!cap.IsOpened())
                 {
                     MethodInvoker inv = delegate
@@ -817,51 +834,60 @@ namespace testdlibdotnetNuget
                     this.Invoke(inv);
                     return;
                 }
-
-                // Grab a frame
-                var temp = new OpenCvSharp.Mat();                    
-                if (!cap.Read(temp))
+                while (!camStatus)
                 {
-                    return;
-                }
-
-                var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
-                Marshal.Copy(temp.Data, array, 0, array.Length);
-                using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
-                {
-                    // Detect faces 
-                    var faces = detector.Operator(cimg);
-                    // Find the pose of each face.
-                    var shapes = new List<FullObjectDetection>();
-                    for (var i = 0; i < faces.Length; ++i)
+                    // Grab a frame
+                    var temp = new OpenCvSharp.Mat();
+                    if (!cap.Read(temp))
                     {
-                        var det = sp.Detect(cimg, faces[i]);
-                        shapes.Add(det);
+                        return;
                     }
 
-                    //delete previous image file
-                    if (File.Exists(DIR + imageName))
+                    var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
+                    Marshal.Copy(temp.Data, array, 0, array.Length);
+                    using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
                     {
-                        File.Delete(DIR + imageName);
+                        // Detect faces 
+                        var faces = detector.Operator(cimg);
+                        // Find the pose of each face.
+                        var shapes = new List<FullObjectDetection>();
+                        for (var i = 0; i < faces.Length; ++i)
+                        {
+                            var det = sp.Detect(cimg, faces[i]);
+                            shapes.Add(det);
+                        }
+
+                        //delete previous image file
+                        if (File.Exists(DIR + imageName))
+                        {
+                            File.Delete(DIR + imageName);
+                        }
+
+                        //image = convertArray2DToImage(cimg);
+                        //image.Save(DIR + imageName, ImageFormat.Jpeg);
+                        Dlib.SaveJpeg(cimg, DIR + imageName);
+
+                        FileStream fs = new FileStream(DIR + imageName, FileMode.Open, FileAccess.Read);
+                        image = Image.FromStream(fs);
+                        fs.Close();
+
+                        pic_camera.Image = image;
+                        temp.Dispose();
+
                     }
-
-                    image = convertArray2DToImage(cimg);
-                    image.Save(DIR + imageName, ImageFormat.Jpeg);
-                    //Dlib.SaveJpeg(cimg, DIR + imageName);
-
-                    //FileStream fs = new FileStream(DIR + imageName, FileMode.Open, FileAccess.Read);
-                    //image = Image.FromStream(fs);
-                    //fs.Close();
-
-                    pic_camera.Image = image;
-                    temp.Dispose();
-
                 }
             }
             catch (Exception e)
             {
                 Program.log(e.ToString());
                 Console.WriteLine(e);
+            }
+            finally
+            {
+                if (cap != null)
+                {
+                    cap.Dispose();
+                }
             }
         }
 
@@ -885,10 +911,10 @@ namespace testdlibdotnetNuget
             camStatus = false;
             await Task.Run(() =>
             {
-                while (!camStatus)
-                {
+                //while (!camStatus)
+                //{
                     Webcam();
-                }
+                //}
             });            
         }
 
@@ -1550,6 +1576,8 @@ namespace testdlibdotnetNuget
                 txt_name.Text = application.firstname + " " + application.middlename + " " + application.lastname;
                 txt_dob.Text = application.dob.ToShortDateString();
                 txt_email.Text = application.emailid;
+                //Read byte[] data and convert into image
+                pic_3_frontView.Image = (Image)((new ImageConverter()).ConvertFrom(application.document.document));
             }
             else
             {
