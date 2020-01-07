@@ -749,7 +749,7 @@ namespace testdlibdotnetNuget
                 /*Read mapping.csv file and store all the mapping data into dictionary
                  * to get name corresponding roll number
                  */
-                if (!File.Exists(fdlg.FileName))
+                if (string.IsNullOrEmpty(filesDir) || !File.Exists(fdlg.FileName))
                 {
                     lblStatus("Mapping file doesn't exist");
                     return;
