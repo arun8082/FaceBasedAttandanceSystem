@@ -467,3 +467,4 @@ D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\sv\ZedGraph.res
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\tr\ZedGraph.resources.dll
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\zh-cn\ZedGraph.resources.dll
 D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\bin\x64\Release\zh-tw\ZedGraph.resources.dll
+D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\obj\x64\Release\testdlibdotnetNuget.csprojAssemblyReference.cache

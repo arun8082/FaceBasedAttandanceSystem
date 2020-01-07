@@ -31,6 +31,8 @@
             this.btn_enrollement = new System.Windows.Forms.Button();
             this.btn_recognition = new System.Windows.Forms.Button();
             this.pnl_left = new System.Windows.Forms.Panel();
+            this.btn_test = new System.Windows.Forms.Button();
+            this.btn_calDistance = new System.Windows.Forms.Button();
             this.btn_enrollFromFile = new System.Windows.Forms.Button();
             this.btn_stopRecognition = new System.Windows.Forms.Button();
             this.pnl_mid = new System.Windows.Forms.Panel();
@@ -122,7 +124,6 @@
             this.btn_3_capture1 = new System.Windows.Forms.Button();
             this.pic_3_frontView = new System.Windows.Forms.PictureBox();
             this.lbl_3_frontView = new System.Windows.Forms.Label();
-            this.btn_calDistance = new System.Windows.Forms.Button();
             this.pnl_left.SuspendLayout();
             this.pnl_mid.SuspendLayout();
             this.pnl_status.SuspendLayout();
@@ -171,6 +172,7 @@
             // 
             // pnl_left
             // 
+            this.pnl_left.Controls.Add(this.btn_test);
             this.pnl_left.Controls.Add(this.btn_calDistance);
             this.pnl_left.Controls.Add(this.btn_enrollFromFile);
             this.pnl_left.Controls.Add(this.btn_stopRecognition);
@@ -179,6 +181,26 @@
             this.pnl_left.Name = "pnl_left";
             this.pnl_left.Size = new System.Drawing.Size(87, 460);
             this.pnl_left.TabIndex = 10;
+            // 
+            // btn_test
+            // 
+            this.btn_test.Location = new System.Drawing.Point(6, 354);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(75, 36);
+            this.btn_test.TabIndex = 16;
+            this.btn_test.Text = "Test";
+            this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            // 
+            // btn_calDistance
+            // 
+            this.btn_calDistance.Location = new System.Drawing.Point(6, 411);
+            this.btn_calDistance.Name = "btn_calDistance";
+            this.btn_calDistance.Size = new System.Drawing.Size(75, 36);
+            this.btn_calDistance.TabIndex = 15;
+            this.btn_calDistance.Text = "Calculate Distance";
+            this.btn_calDistance.UseVisualStyleBackColor = true;
+            this.btn_calDistance.Click += new System.EventHandler(this.btn_calDistance_Click);
             // 
             // btn_enrollFromFile
             // 
@@ -411,9 +433,9 @@
             this.lbl_rollNo.AutoSize = true;
             this.lbl_rollNo.Location = new System.Drawing.Point(40, 40);
             this.lbl_rollNo.Name = "lbl_rollNo";
-            this.lbl_rollNo.Size = new System.Drawing.Size(45, 13);
+            this.lbl_rollNo.Size = new System.Drawing.Size(84, 13);
             this.lbl_rollNo.TabIndex = 32;
-            this.lbl_rollNo.Text = "Roll No.";
+            this.lbl_rollNo.Text = "INDOS/SID No.";
             // 
             // txt_rollNo
             // 
@@ -421,6 +443,7 @@
             this.txt_rollNo.Name = "txt_rollNo";
             this.txt_rollNo.Size = new System.Drawing.Size(213, 20);
             this.txt_rollNo.TabIndex = 0;
+            this.txt_rollNo.LostFocus += new System.EventHandler(this.txt_rollNo_LostFocus);
             // 
             // tab_capture
             // 
@@ -1165,16 +1188,6 @@
             this.lbl_3_frontView.TabIndex = 0;
             this.lbl_3_frontView.Text = "Front View";
             // 
-            // btn_calDistance
-            // 
-            this.btn_calDistance.Location = new System.Drawing.Point(6, 411);
-            this.btn_calDistance.Name = "btn_calDistance";
-            this.btn_calDistance.Size = new System.Drawing.Size(75, 36);
-            this.btn_calDistance.TabIndex = 15;
-            this.btn_calDistance.Text = "Calculate Distance";
-            this.btn_calDistance.UseVisualStyleBackColor = true;
-            this.btn_calDistance.Click += new System.EventHandler(this.btn_calDistance_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1317,6 +1330,7 @@
         private System.Windows.Forms.RadioButton rdbtn_webcam;
         private System.Windows.Forms.Button btn_enrollFromFile;
         private System.Windows.Forms.Button btn_calDistance;
+        private System.Windows.Forms.Button btn_test;
     }
 }
 

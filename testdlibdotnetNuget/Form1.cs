@@ -78,12 +78,10 @@ namespace testdlibdotnetNuget
             ((Control)tab_enrollment).Enabled = false;
             pnl_viewList.Visible = false;
 
-            lbl_status.Text = "Recognition view is running.....";
-            lbl_status.ForeColor = Color.RoyalBlue;
+            lblStatus("Recognition view is running.....","WARNING");
             _canceller = new CancellationTokenSource();
             camStatus = false;
-            lbl_status.Text = "Camera started";
-            lbl_status.ForeColor = Color.Blue;
+            lblStatus("Camera started","WARNING");
             camStatus = false;
             await Task.Run(() =>
             {
@@ -110,16 +108,16 @@ namespace testdlibdotnetNuget
 
         private void recognitionWebcam()
         {
+            dynamic cap = null;
             try
             {
                 int X = 0, Y = 0;
-                var cap = new OpenCvSharp.VideoCapture(0);
+                cap = new OpenCvSharp.VideoCapture(0);                
                 if (!cap.IsOpened())
                 {
                     MethodInvoker inv = delegate
                     {
-                        this.lbl_status.Text = "Unable to connect to camera";
-                        lbl_status.ForeColor = Color.DarkRed;
+                        lblStatus("Unable to connect to camera");
                     };
                     this.Invoke(inv);
                     return;
@@ -136,18 +134,8 @@ namespace testdlibdotnetNuget
                         //return;
                         break;
                     }
-
                     var array = new byte[temp.Width * temp.Height * temp.ElemSize()];
-                    try
-                    {
-                        //temp= new OpenCvSharp.Mat();
-                        Marshal.Copy(temp.Data, array, 0, array.Length);
-                    }
-                    catch (ArgumentNullException ex)
-                    {
-                        Console.WriteLine("in catch " + ex.Message);
-                        continue;
-                    }
+                    Marshal.Copy(temp.Data, array, 0, array.Length);
                     using (var cimg = Dlib.LoadImageData<BgrPixel>(array, (uint)temp.Height, (uint)temp.Width, (uint)(temp.Width * temp.ElemSize())))
                     {
                         // Detect faces 
@@ -199,6 +187,13 @@ namespace testdlibdotnetNuget
                 Program.log(e.ToString());
                 Console.WriteLine(e);
             }
+            finally
+            {
+                if(cap != null)
+                {
+                    cap.Dispose();
+                }
+            }
         }
 
         private string extractAndMatchFace()
@@ -228,8 +223,7 @@ namespace testdlibdotnetNuget
                     {
                         MethodInvoker inv = delegate
                         {
-                            this.lbl_status.Text = "Error: No face found";
-                            lbl_status.ForeColor = Color.DarkRed;
+                            lblStatus("Error: No face found");
                         };
                         this.Invoke(inv);
                         return null;
@@ -238,8 +232,7 @@ namespace testdlibdotnetNuget
                     {
                         MethodInvoker inv = delegate
                         {
-                            this.lbl_status.Text = "Error: More than one face found";
-                            lbl_status.ForeColor = Color.DarkRed;
+                            lblStatus("Error: More than one face found");
                         };
                         this.Invoke(inv);
                         return null;
@@ -247,8 +240,7 @@ namespace testdlibdotnetNuget
                     if (faces.Count == 1) {
                         MethodInvoker inv = delegate
                         {
-                            this.lbl_status.Text = "";
-                            lbl_status.ForeColor = Color.DarkRed;
+                            lblStatus(null);
                         };
                         this.Invoke(inv);
                     }
@@ -288,7 +280,7 @@ namespace testdlibdotnetNuget
                         {
                             Console.WriteLine("275Roll: "+ list.ElementAt(minPosition).rollNo + "name: " + list.ElementAt(minPosition).studentName + " ïmg: " + list.ElementAt(minPosition).image + " dis: " + maxDistance);
                             queue.Enqueue(list.ElementAt(minPosition));
-                            Console.WriteLine("\nCount after if+ " + queue.Count);
+                            //Console.WriteLine("\nCount after if+ " + queue.Count);
                             if (queue.Count < 3)
                             {
                                 return "";
@@ -305,8 +297,7 @@ namespace testdlibdotnetNuget
                                 {
                                     MethodInvoker inv = delegate
                                     {
-                                        this.lbl_status.Text = desc1.studentName;
-                                        lbl_status.ForeColor = Color.ForestGreen;
+                                        lblStatus(desc1.studentName + " " + maxDistance,"SUCCESS");
                                     };
                                     this.Invoke(inv);
                                     if (DBHandler.insertOrUpdateAttandance(desc1.rollNo.ToString()))
@@ -319,8 +310,7 @@ namespace testdlibdotnetNuget
                                     Console.WriteLine("309recog:   d: " + maxDistance + " po: " + minPosition);
                                     MethodInvoker inv = delegate
                                     {
-                                        this.lbl_status.Text = "Unknown";
-                                        lbl_status.ForeColor = Color.DarkRed;
+                                        lblStatus("Unknown");
                                     };
                                     this.Invoke(inv);
                                     Console.WriteLine("Unknown");
@@ -332,8 +322,7 @@ namespace testdlibdotnetNuget
                             Console.WriteLine("321recog:   d: " + maxDistance + " po: " + minPosition+" "+list.ElementAt(minPosition).rollNo);
                             MethodInvoker inv = delegate
                             {
-                                this.lbl_status.Text = "Unknown";
-                                lbl_status.ForeColor = Color.DarkRed;
+                                lblStatus("Unknown");
                             };
                             this.Invoke(inv);
                             Console.WriteLine("Unknown");
@@ -378,7 +367,7 @@ namespace testdlibdotnetNuget
             tab_1.SelectedIndex = 0;
             ((Control)tab_enrollment).Enabled = true;
             pnl_viewList.Visible = true;
-            //pnl_viewList.Enabled = false;
+            pnl_viewList.Enabled = false;
         }
         
         private void captureImage(string id) {
@@ -427,14 +416,12 @@ namespace testdlibdotnetNuget
 
                     if (!faces.Any())
                     {
-                        lbl_status.Text = "Error: No face found";
-                        lbl_status.ForeColor = Color.DarkRed;
+                        lblStatus("Error: No face found");
                         return null;
                     }
                     if (faces.Count > 1)
                     {
-                        lbl_status.Text = "Error: More than one face found";
-                        lbl_status.ForeColor = Color.DarkRed;
+                        lblStatus("Error: More than one face found");
                         return null;
                     }
 
@@ -460,13 +447,7 @@ namespace testdlibdotnetNuget
                     Dlib.SaveJpeg(faces[0], faceImageName);
 
                     bool res = DBHandler.InsertFaceDescription(descriptionList.ToArray(), id.ToString(), rollNo);
-
-                    MethodInvoker inv = delegate
-                    {
-                        this.lbl_status.Text = id + " image is captured successfully";
-                        lbl_status.ForeColor = Color.ForestGreen;
-                    };
-                    this.Invoke(inv);
+                    lblStatus(id + " image is captured successfully","SUCCESS");
 
                     foreach (var descriptor in faceDescriptors)
                         descriptor.Dispose();
@@ -577,9 +558,8 @@ namespace testdlibdotnetNuget
             institute = txt_institute.Text.Trim();
             if (validateData() == true)
             {
-                lbl_status.Text = "Data saved successfully";
-                lbl_status.ForeColor = Color.ForestGreen;
-                //DBHandler.InsertEnrollmenmtData(rollNo, name, course,dob,email,institute,"1");
+                lblStatus("Data saved successfully","SUCCESS");
+                DBHandler.InsertEnrollmenmtData(rollNo, name, course,dob,email,institute,"1");
                 seq = "saved";
 
                 tab_1.SelectedIndex = 1;
@@ -599,22 +579,19 @@ namespace testdlibdotnetNuget
         {
             if (seq != "saved")
             {
-                lbl_status.Text = "Please fill the enrollment data";
-                lbl_status.ForeColor = Color.DarkRed;
+                lblStatus("Please fill the enrollment data");
                 return;
             }
             Console.WriteLine("counter submit  " + counter);
             if (seq != "saved" || counter != 16 )
             {
-                lbl_status.Text = "Please capture all images. Some images are missing";
-                lbl_status.ForeColor = Color.DarkRed;
+                lblStatus("Please capture all images. Some images are missing");
                 return;
             }
             bool res=DBHandler.InsertEnrollmenmtData(rollNo.Trim(), name.Trim(), course.Trim(), dob.Trim(), email.Trim(), institute.Trim(), "1");
             if (res == true)
             {
-                lbl_status.Text = "Data submitted successfully";
-                lbl_status.ForeColor = Color.ForestGreen;
+                lblStatus("Data submitted successfully","SUCCESS");
 
                 seq = "";
                 txt_rollNo.Text = null;
@@ -732,7 +709,7 @@ namespace testdlibdotnetNuget
             fdlg.RestoreDirectory = true;
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
-                lbl_status.Text = fdlg.FileName;
+                lblStatus(fdlg.FileName,"SUCCESS");
                 pic_camera.Image = Image.FromFile(fdlg.FileName);
                 if (File.Exists(DIR + imageName))
                 {
@@ -783,10 +760,7 @@ namespace testdlibdotnetNuget
                     //Console.WriteLine(studentRollno + "\n");
                     foreach (string studentImage in Directory.GetFiles(studentImageDir))
                     {
-                        lbl_status.Refresh();
-                        lbl_status.Text = studentRollno + " Data is capturing."+referesh.Substring(0,i++);
-                        lbl_status.ForeColor = Color.ForestGreen;
-                        lbl_status.Refresh();
+                        lblStatus(studentRollno + " Data is capturing."+referesh.Substring(0,i++),"SUCCESS");
                         if (!DBHandler.checkRollnoExist(studentRollno))
                         {
                             if (dict.TryGetValue(studentRollno, out studentName))
@@ -807,27 +781,16 @@ namespace testdlibdotnetNuget
                             //Console.WriteLine("captureImage " + viewName);
                         }
                     }
-                    lbl_status.Text = null;
-                    lbl_status.Refresh();
+                    lblStatus(null);
                 }
             }
             catch (DirectoryNotFoundException dex) {
-                MethodInvoker inv = delegate
-                {
-                    this.lbl_status.Text = imageDir+" Directory not found";
-                    lbl_status.ForeColor = Color.DarkRed;
-                };
-                this.Invoke(inv);
+                lblStatus(imageDir +" Directory not found");
                 Program.log(dex.ToString());
             }
             catch (FileNotFoundException fex)
             {
-                MethodInvoker inv = delegate
-                {
-                    this.lbl_status.Text = imageDir + @"\mapping.csv"+" File doesn't exist";
-                    lbl_status.ForeColor = Color.DarkRed;
-                };
-                this.Invoke(inv);
+                lblStatus(imageDir + @"\mapping.csv"+" File doesn't exist");
                 Program.log(fex.ToString());
             }
             catch (Exception e)
@@ -849,8 +812,7 @@ namespace testdlibdotnetNuget
                 {
                     MethodInvoker inv = delegate
                     {
-                        this.lbl_status.Text = "Unable to connect to camera";
-                        lbl_status.ForeColor = Color.DarkRed;
+                        lblStatus("Unable to connect to camera");
                     };
                     this.Invoke(inv);
                     return;
@@ -1491,11 +1453,10 @@ namespace testdlibdotnetNuget
                     if (desc1 != null && desc2 != null)
                     {
                         distance = calculateDistance(desc1,desc2);
-                        File.AppendAllText(path + @"\distances.csv", file[0].Substring(file[0].LastIndexOf('\\') + 1) + "," + file[1].Substring(file[1].LastIndexOf('\\') + 1) + "," + distance + "\n");
+                        File.AppendAllText(path + @"\distances_"+ baseDir + ".csv", file[0].Substring(file[0].LastIndexOf('\\') + 1) + "," + file[1].Substring(file[1].LastIndexOf('\\') + 1) + "," + distance + "\n");
                         Console.WriteLine(path + " " + file[0].Substring(file[0].LastIndexOf('\\') + 1) + "," + file[1].Substring(file[1].LastIndexOf('\\') + 1) + "," + distance);
                     }
                 }
-
             }catch(Exception e)
             {
                 Program.log(e.ToString());
@@ -1573,5 +1534,64 @@ namespace testdlibdotnetNuget
             return null;
         }
 
+        private void btn_test_Click(object sender, EventArgs e)
+        {
+            //calculateDistancesBWMultiImages("lfw_eq_2_same");
+            //calculateDistancesBWMultiImages("lfw_eq_2_diff");
+        }
+
+        private void txt_rollNo_LostFocus(object sender, EventArgs e)
+        {
+            string applicationNo = txt_rollNo.Text.ToUpper().Trim();
+            SeafarerApplication application = DBHandler.GetSeafarerApplication(applicationNo);
+            if (application != null)
+            {
+                lblStatus("Valid SID.","SUCCESS");
+                txt_name.Text = application.firstname + " " + application.middlename + " " + application.lastname;
+                txt_dob.Text = application.dob.ToShortDateString();
+                txt_email.Text = application.emailid;
+            }
+            else
+            {
+                resetForm();
+                lblStatus("Ivalid INDOS/SID no.","ERROR");
+            }
+        }
+
+        private void lblStatus(string message,string type="ERROR")
+        {
+            if (string.IsNullOrEmpty(message)) {
+                lbl_status.ResetText();
+                lbl_status.Refresh();
+            }
+            else if (type.ToUpper() == "ERROR")
+            {
+                lbl_status.Text = message;
+                lbl_status.ForeColor = Color.DarkRed;
+                lbl_status.Refresh();
+            }
+            else if (type.ToUpper() == "SUCCESS")
+            {
+                lbl_status.Text = message;
+                lbl_status.ForeColor = Color.ForestGreen;
+                lbl_status.Refresh();
+            }
+            else
+            {
+                lbl_status.Text = message;
+                lbl_status.ForeColor = Color.Blue;
+                lbl_status.Refresh();
+            }
+        }
+
+        private void resetForm()
+        {
+            //txt_rollNo.ResetText();
+            txt_name.ResetText();
+            txt_dob.ResetText();
+            txt_email.ResetText();
+            txt_course.ResetText();
+            txt_institute.ResetText();
+        }
     }
 }

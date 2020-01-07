@@ -15,10 +15,11 @@ namespace testdlibdotnetNuget
     class DBHandler
     {
         public static NpgsqlConnection con;
+        public static NpgsqlConnection conSID;
 
         private DBHandler()
         { }
-        
+
         public static NpgsqlConnection GetConnection()
         {
             if (con != null)
@@ -35,7 +36,29 @@ namespace testdlibdotnetNuget
                 }
                 catch (Exception e)
                 {
-                    Program.log(e.ToString());
+                    Program.log("GetConnection: " + e.ToString());
+                    return null;
+                }
+            }
+        }
+
+        public static NpgsqlConnection GetSIDConnection()
+        {
+            if (conSID != null)
+            {
+                return conSID;
+            }
+            else
+            {
+                try
+                {
+                    string conStr = ConfigurationManager.ConnectionStrings["conSID"].ConnectionString;
+                    conSID = new NpgsqlConnection(conStr);
+                    return conSID;
+                }
+                catch (Exception e)
+                {
+                    Program.log("GetSIDConnection: " + e.ToString());
                     return null;
                 }
             }
@@ -45,12 +68,18 @@ namespace testdlibdotnetNuget
         {
             try
             {
+                bool status = false;
                 if (con != null)
                 {
                     con.Close();
-                    return true;
+                    status= true;
                 }
-                return false;
+                if(conSID != null)
+                {
+                    conSID.Close();
+                    status= true;
+                }
+                return status;
             }
             catch(Exception e)
             {
@@ -190,15 +219,12 @@ namespace testdlibdotnetNuget
             }
             finally
             {
-                if (con != null)
-                {
-                    con.Close();
-                }                
+                CloseConnection();               
             }
             return null;
         }
 
-        internal static bool checkDescriptionExist(string rollNo)
+        public static bool checkDescriptionExist(string rollNo)
         {
             try
             {
@@ -276,12 +302,78 @@ namespace testdlibdotnetNuget
             }
             finally
             {
-                if (con != null)
-                {
-                    con.Close();
-                }
+                CloseConnection();
             }
             return false;
         }
+
+        /// <summary>
+        /// Retrieve the seafarer details from sid server
+        /// </summary>
+        /// <param name="sidNo"></param>
+        /// <returns></returns>
+        public static SeafarerApplication GetSeafarerApplication(string sidNo)
+        {
+            SeafarerApplication seafarerApplication=null;
+            if (!string.IsNullOrEmpty(sidNo))
+            {
+                try
+                {
+                    string str = "select sidno,applicationid,firstname,middlename,lastname,gender,dob,pob,nationality,identification_mark,sid_doi,sid_doe,cdcno,transactionid,sid_status,countrycode,sid_poi,indos_no,sid_counter,barcode,document_id,document,emailid" +
+                        " from \"SIDDB\".sid_view where sidno='{0}' or indos_no='{0}'and document_id='102'";
+                    string sqlstr = string.Format(str, sidNo);
+                    Console.WriteLine(sqlstr);
+                    GetSIDConnection().Open();
+                    NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conSID;
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+                    if (!reader.HasRows)
+                    {
+                        return seafarerApplication;
+                    }
+                    seafarerApplication = new SeafarerApplication();
+                    reader.Read();   
+                    seafarerApplication.sidno = reader.GetString(0);
+                    seafarerApplication.applicationid = reader.GetString(1);
+                    seafarerApplication.firstname = reader.GetString(2);
+                    seafarerApplication.middlename = reader.GetString(3);
+                    seafarerApplication.lastname = reader.GetString(4);
+                    seafarerApplication.gender = reader.GetString(5);
+                    seafarerApplication.dob = reader.GetDateTime(6);
+                    seafarerApplication.pob = reader.GetString(7);
+                    seafarerApplication.nationality = reader.GetString(8);
+                    seafarerApplication.identification_mark = reader.GetString(9);
+                    seafarerApplication.sid_doi = reader.GetDateTime(10);
+                    seafarerApplication.sid_doe = reader.GetDateTime(11);
+                    seafarerApplication.cdcno = reader.GetString(12);
+                    seafarerApplication.transactionid = reader.IsDBNull(13)? "": reader.GetString(13);
+                    seafarerApplication.sid_status = reader.GetString(14);
+                    seafarerApplication.countrycode = reader.GetInt32(15);
+                    seafarerApplication.sid_poi = reader.GetString(16);
+                    seafarerApplication.indos_no = reader.GetString(17);
+                    seafarerApplication.sid_counter = reader.GetInt32(18);
+                    seafarerApplication.barcode = (reader.IsDBNull(19) ? null:(byte[])reader.GetValue(19));
+                    SeafarerDocument documemt = new SeafarerDocument();
+                    documemt.documentId = reader.GetString(20);
+                    documemt.document = reader.IsDBNull(21) ? null:(byte[])reader.GetValue(21);
+                    seafarerApplication.document = documemt;
+                    seafarerApplication.emailid = reader.GetString(22);
+
+
+                    Console.WriteLine("GetSeafarerApplication: " + seafarerApplication);
+                }
+                catch (Exception ex)
+                {                    
+                    Program.log(ex.ToString());
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+            return seafarerApplication;
+        }
+
     }
 }

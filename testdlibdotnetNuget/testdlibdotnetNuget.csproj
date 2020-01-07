@@ -209,6 +209,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeafarerApplication.cs" />
+    <Compile Include="SeafarerDocument.cs" />
     <EmbeddedResource Include="CalculateDistance.resx">
       <DependentUpon>CalculateDistance.cs</DependentUpon>
     </EmbeddedResource>

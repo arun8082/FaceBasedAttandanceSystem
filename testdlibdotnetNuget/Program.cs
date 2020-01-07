@@ -34,6 +34,7 @@ namespace testdlibdotnetNuget
                 }
                 if (!string.IsNullOrEmpty(message))
                 {
+                    Console.WriteLine(message);
                     File.AppendAllText(logFile, "\n"+DateTime.Now+"\t\t"+message);
                 }
             }
