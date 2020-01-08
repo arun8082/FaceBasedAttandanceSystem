@@ -2908,3 +2908,857 @@ Parameter name: source
 07-01-2020 17:06:19		System.ArgumentException: Filter string you provided is not valid. The filter string must contain a description of the filter, followed by the vertical bar (|) and the filter pattern. The strings for different filtering options must also be separated by the vertical bar. Example: "Text files (*.txt)|*.txt|All files (*.*)|*.*"
    at System.Windows.Forms.FileDialog.set_Filter(String value)
    at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 741
+08-01-2020 12:17:25		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:26		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:26		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:27		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:27		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:28		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:28		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:29		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:30		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:30		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:31		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:31		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:32		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:32		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:33		System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at testdlibdotnetNuget.Form1.extractAndMatchFace() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 317
+08-01-2020 12:17:51		System.IO.IOException: The process cannot access the file 'D:\FaceBasedAttandanceSystem\enroll_image\mapping1.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding)
+   at System.IO.File.InternalReadAllLines(String path, Encoding encoding)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 767
+08-01-2020 12:34:25		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:25		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:26		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:26		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:26		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:26		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:27		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:27		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:27		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:28		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:28		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:28		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:28		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:29		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:29		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:29		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:29		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:30		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:30		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:30		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:31		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:31		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:31		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 12:34:31		Npgsql.NpgsqlException (0x80004005): 42703: column "roll_no" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.checkRollnoExist(String rollNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 163
+08-01-2020 13:20:02		System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at testdlibdotnetNuget.Form1.enrollFromFile() in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 787
+08-01-2020 13:31:10		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:11		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:11		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:12		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:13		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:13		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:14		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:15		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:15		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:16		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:17		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:17		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:18		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:19		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:19		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:20		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:21		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:21		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:22		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 13:31:23		System.NullReferenceException: Object reference not set to an instance of an object.
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:18:52		Npgsql.NpgsqlException (0x80004005): 22P02: invalid input syntax for integer: "CDAC"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertEnrollmenmtData(Student student) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 133
+08-01-2020 14:25:27		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:31		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:34		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:36		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:37		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:38		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:39		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:46		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:25:50		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 442
+08-01-2020 14:26:00		Npgsql.NpgsqlException (0x80004005): 23505: duplicate key value violates unique constraint "uk_e2rndfrsx22acpq2ty1caeuyw"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.SkipUntil(BackendMessageCode stopAt1, BackendMessageCode stopAt2)
+   at Npgsql.NpgsqlDataReader.NextResultInternal()
+   at Npgsql.NpgsqlDataReader.Init()
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.InsertEnrollmenmtData(Student student) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 133
+08-01-2020 14:27:09		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:11		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:15		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:17		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:20		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:22		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:24		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:26		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:30		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:32		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:34		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:36		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:37		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:39		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:41		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:43		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:45		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:47		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:49		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:51		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:52		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:54		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:56		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:57		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:27:59		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:01		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:03		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:07		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:09		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:11		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:13		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:28:18		Npgsql.NpgsqlException (0x80004005): 42703: column "is_present" of relation "attendance" does not exist
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 298
+08-01-2020 14:30:12		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:14		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:15		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:18		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:44		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:46		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:48		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:50		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:51		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:53		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:55		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 14:30:56		Npgsql.NpgsqlException (0x80004005): 42883: operator does not exist: character varying = bigint
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 284
+08-01-2020 16:37:06		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 458
+08-01-2020 16:37:11		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 458
+08-01-2020 16:37:17		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 458
+08-01-2020 16:39:02		System.Runtime.InteropServices.SEHException (0x80004005): External component has thrown an exception.
+   at DlibDotNet.NativeMethods.save_jpeg_matrix(MatrixElementType type, IntPtr matrix, Int32 templateRows, Int32 templateColumn, Byte[] path, Int32 quality)
+   at DlibDotNet.Dlib.SaveJpeg(MatrixBase matrix, String path, Int32 quality)
+   at testdlibdotnetNuget.Form1.FaceExtraction(String id) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\Form1.cs:line 458
+08-01-2020 17:00:29		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:30		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:34		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:35		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:48		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:52		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:54		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:57		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:00:59		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:01		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:02		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:04		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:06		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:07		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:09		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:11		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:12		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:14		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:16		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:18		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:21		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:28		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:43		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:46		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:01:48		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:02:10		Npgsql.NpgsqlException (0x80004005): 42601: syntax error at or near "NL3786"
+   at Npgsql.NpgsqlConnector.DoReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlConnector.ReadSingleMessage(DataRowLoadingMode dataRowLoadingMode, Boolean returnNullForAsyncMessage)
+   at Npgsql.NpgsqlCommand.Execute(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteNonQueryInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 299
+08-01-2020 17:02:42		System.InvalidOperationException: Connection already open
+   at Npgsql.NpgsqlConnection.CheckConnectionClosed()
+   at Npgsql.NpgsqlConnection.Open()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 273
+08-01-2020 17:13:03		System.InvalidOperationException: Connection already open
+   at Npgsql.NpgsqlConnection.CheckConnectionClosed()
+   at Npgsql.NpgsqlConnection.Open()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 273
+08-01-2020 17:15:22		System.InvalidOperationException: Connection already open
+   at Npgsql.NpgsqlConnection.CheckConnectionClosed()
+   at Npgsql.NpgsqlConnection.Open()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 273
+08-01-2020 17:17:26		System.InvalidOperationException: Connection already open
+   at Npgsql.NpgsqlConnection.CheckConnectionClosed()
+   at Npgsql.NpgsqlConnection.Open()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 272
+08-01-2020 17:19:12		System.InvalidOperationException: An operation is already in progress.
+   at Npgsql.NpgsqlConnector.StartUserAction(ConnectorState newState)
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:14		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:15		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:17		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:18		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:20		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:21		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:23		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:24		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:26		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:27		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:29		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:30		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:32		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:35		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:36		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:19:38		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 274
+08-01-2020 17:20:12		System.InvalidOperationException: Connection already open
+   at Npgsql.NpgsqlConnection.CheckConnectionClosed()
+   at Npgsql.NpgsqlConnection.Open()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 273
+08-01-2020 17:20:14		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 276
+08-01-2020 17:20:16		System.InvalidOperationException: Connection is not open
+   at Npgsql.NpgsqlConnection.CheckReady()
+   at Npgsql.NpgsqlCommand.ExecuteScalarInternal()
+   at testdlibdotnetNuget.DBHandler.insertOrUpdateAttandance(String indosNo) in D:\FaceBasedAttandanceSystem\testdlibdotnetNuget\DBHandler.cs:line 276

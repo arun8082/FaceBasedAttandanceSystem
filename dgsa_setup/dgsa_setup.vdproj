@@ -1611,6 +1611,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DBECD8AE5076F165966AE8E59A8ADF1E"
+        "OwnerKey" = "8:_B7722878278040D6895791D155039D5D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DD5321FD22D57F14F3EC8CE5290374B1"
         "OwnerKey" = "8:_B7722878278040D6895791D155039D5D"
         "MsmSig" = "8:_UNDEFINED"
@@ -1792,13 +1798,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E87D5BFE6C45E11BF082678CB6A828EC"
+        "OwnerKey" = "8:_B7722878278040D6895791D155039D5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B7722878278040D6895791D155039D5D"
+        "OwnerKey" = "8:_DBECD8AE5076F165966AE8E59A8ADF1E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2023,6 +2029,12 @@
         "OwnerKey" = "8:_39A834431A847C8E8EF52154D8A312E9"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E87D5BFE6C45E11BF082678CB6A828EC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -2048,6 +2060,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -5476,6 +5496,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DBECD8AE5076F165966AE8E59A8ADF1E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DBECD8AE5076F165966AE8E59A8ADF1E"
+                    {
+                    "Name" = "8:ZedGraph.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ZedGraph.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_95FAB698F0AD474C85FF31ADC106E715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DD5321FD22D57F14F3EC8CE5290374B1"
             {
             "AssemblyRegister" = "3:1"
@@ -6099,12 +6150,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:"
+        "Manufacturer" = "8:CDAC_MUMBAI"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:dgsa_setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Cdac-Mumbai"
+        "ARPCONTACT" = "8:CDAC-Mumbai"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"

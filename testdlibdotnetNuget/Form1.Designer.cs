@@ -43,11 +43,9 @@
             this.tab_enrollment = new System.Windows.Forms.TabPage();
             this.lbl_enrollment = new System.Windows.Forms.Label();
             this.pnl_enrollmentForm = new System.Windows.Forms.Panel();
-            this.cal_dob = new System.Windows.Forms.MonthCalendar();
             this.lbl_email = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.lbl_institute = new System.Windows.Forms.Label();
-            this.txt_institute = new System.Windows.Forms.TextBox();
             this.txt_course = new System.Windows.Forms.TextBox();
             this.lbl_course = new System.Windows.Forms.Label();
             this.btn_reset = new System.Windows.Forms.Button();
@@ -63,6 +61,7 @@
             this.rdbtn_webcam = new System.Windows.Forms.RadioButton();
             this.lbl_camtureFaces = new System.Windows.Forms.Label();
             this.pic_camera = new System.Windows.Forms.PictureBox();
+            this.cal_dob = new System.Windows.Forms.MonthCalendar();
             this.pnl_viewList = new System.Windows.Forms.Panel();
             this.btn_7_reset5 = new System.Windows.Forms.Button();
             this.btn_7_capture5 = new System.Windows.Forms.Button();
@@ -124,6 +123,7 @@
             this.btn_3_capture1 = new System.Windows.Forms.Button();
             this.pic_3_frontView = new System.Windows.Forms.PictureBox();
             this.lbl_3_frontView = new System.Windows.Forms.Label();
+            this.cmb_institute = new System.Windows.Forms.ComboBox();
             this.pnl_left.SuspendLayout();
             this.pnl_mid.SuspendLayout();
             this.pnl_status.SuspendLayout();
@@ -190,6 +190,7 @@
             this.btn_test.TabIndex = 16;
             this.btn_test.Text = "Test";
             this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Visible = false;
             this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
             // 
             // btn_calDistance
@@ -298,10 +299,10 @@
             // 
             this.pnl_enrollmentForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_enrollmentForm.Controls.Add(this.cal_dob);
+            this.pnl_enrollmentForm.Controls.Add(this.cmb_institute);
             this.pnl_enrollmentForm.Controls.Add(this.lbl_email);
             this.pnl_enrollmentForm.Controls.Add(this.txt_email);
             this.pnl_enrollmentForm.Controls.Add(this.lbl_institute);
-            this.pnl_enrollmentForm.Controls.Add(this.txt_institute);
             this.pnl_enrollmentForm.Controls.Add(this.txt_course);
             this.pnl_enrollmentForm.Controls.Add(this.lbl_course);
             this.pnl_enrollmentForm.Controls.Add(this.btn_reset);
@@ -316,14 +317,6 @@
             this.pnl_enrollmentForm.Name = "pnl_enrollmentForm";
             this.pnl_enrollmentForm.Size = new System.Drawing.Size(388, 322);
             this.pnl_enrollmentForm.TabIndex = 32;
-            // 
-            // cal_dob
-            // 
-            this.cal_dob.Location = new System.Drawing.Point(151, 119);
-            this.cal_dob.Name = "cal_dob";
-            this.cal_dob.TabIndex = 44;
-            this.cal_dob.Visible = false;
-            this.cal_dob.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.cal_dob_DateChanged);
             // 
             // lbl_email
             // 
@@ -349,13 +342,6 @@
             this.lbl_institute.Size = new System.Drawing.Size(44, 13);
             this.lbl_institute.TabIndex = 34;
             this.lbl_institute.Text = "Institute";
-            // 
-            // txt_institute
-            // 
-            this.txt_institute.Location = new System.Drawing.Point(151, 172);
-            this.txt_institute.Name = "txt_institute";
-            this.txt_institute.Size = new System.Drawing.Size(213, 20);
-            this.txt_institute.TabIndex = 5;
             // 
             // txt_course
             // 
@@ -502,6 +488,14 @@
             this.pic_camera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_camera.TabIndex = 3;
             this.pic_camera.TabStop = false;
+            // 
+            // cal_dob
+            // 
+            this.cal_dob.Location = new System.Drawing.Point(159, 119);
+            this.cal_dob.Name = "cal_dob";
+            this.cal_dob.TabIndex = 44;
+            this.cal_dob.Visible = false;
+            this.cal_dob.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.cal_dob_DateChanged);
             // 
             // pnl_viewList
             // 
@@ -1188,6 +1182,14 @@
             this.lbl_3_frontView.TabIndex = 0;
             this.lbl_3_frontView.Text = "Front View";
             // 
+            // cmb_institute
+            // 
+            this.cmb_institute.FormattingEnabled = true;
+            this.cmb_institute.Location = new System.Drawing.Point(150, 176);
+            this.cmb_institute.Name = "cmb_institute";
+            this.cmb_institute.Size = new System.Drawing.Size(214, 21);
+            this.cmb_institute.TabIndex = 44;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1314,7 +1316,6 @@
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label lbl_institute;
-        private System.Windows.Forms.TextBox txt_institute;
         private System.Windows.Forms.TextBox txt_course;
         private System.Windows.Forms.Label lbl_course;
         private System.Windows.Forms.Button btn_reset;
@@ -1331,6 +1332,7 @@
         private System.Windows.Forms.Button btn_enrollFromFile;
         private System.Windows.Forms.Button btn_calDistance;
         private System.Windows.Forms.Button btn_test;
+        private System.Windows.Forms.ComboBox cmb_institute;
     }
 }
 

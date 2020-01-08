@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Text.Json.Serialization;
+using testdlibdotnetNuget.Models;
 
 namespace testdlibdotnetNuget
 {
@@ -88,16 +89,16 @@ namespace testdlibdotnetNuget
             }
         }
 
-        public static bool InsertFaceDescription(double[] description,string faceImageName,string rollNo)
+        public static bool InsertFaceDescription(double[] description,string faceImageName,string indosNo)
         {
             if (description != null && faceImageName!=null)
             {
                 try
                 {
                     GetConnection().Open();
-                    string str = "insert into description (description,image,roll_no) values (ARRAY[{0}],'{1}','{2}')";
+                    string str = "insert into descriptions (image_description,image_name,indos_no) values (ARRAY[{0}],'{1}','{2}')";
                     string arr = string.Join(",", description);
-                    string sqlstr= string.Format(str, arr.ToString(), faceImageName, rollNo);
+                    string sqlstr= string.Format(str, arr.ToString(), faceImageName, indosNo);
                     //Console.WriteLine("count: " + sqlstr);
                     NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
                     cmd.Connection = con;
@@ -117,14 +118,14 @@ namespace testdlibdotnetNuget
             return false;
         } 
 
-        public static bool InsertEnrollmenmtData(string rollNo, string name, string course,string dob,string email,string institute,string centerId)
+        public static bool InsertEnrollmenmtData(Student student)
         {
             try
             {
                 //string sqlstr = "insert into students (roll_no,college,course,dob,mobile_no,student_name,centre_id) values";
-                string str = "insert into students (roll_no,student_name,course,dob,email,college,centre_id) values(" +
-                    "'{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
-                string sqlstr = string.Format(str,rollNo, name,course,dob,email,institute,centerId);
+                string str = "insert into students (indos_no,first_name,middle_name,last_name,dob,email,password,contact_no,course,institute_id,created) values(" +
+                    "'{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',now()::timestamp(0))";
+                string sqlstr = string.Format(str, student.IndosNo,student.FirstName, student.MiddleName, student.LastName, student.Dob, student.Email, student.Password, student.ContactNo, student.Course, student.Institute);
                 //Console.WriteLine("connection  " + sqlstr);
                 GetConnection().Open();
                 NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
@@ -150,12 +151,12 @@ namespace testdlibdotnetNuget
             return false;
         }
 
-        public static bool checkRollnoExist(string rollNo)
+        public static bool checkRollnoExist(string indosNo)
         {
             try
             {
-                string str = "select count(*) from students where roll_no='{0}'";
-                string sqlstr = string.Format(str, rollNo);
+                string str = "select count(*) from students where indos_no='{0}'";
+                string sqlstr = string.Format(str, indosNo);
                 GetConnection().Open();
                 NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
                 cmd.Connection = con;
@@ -184,8 +185,8 @@ namespace testdlibdotnetNuget
             try
             {
                 List<Description> list=new List<Description>();
-                string str = "select s.roll_no,s.student_name,d.image,d.description from students s inner join description d" +
-                    " on s.roll_no=d.roll_no ";
+                string str = "select s.indos_no,s.first_name,d.image_name,d.image_description from students s inner join descriptions d" +
+                    " on s.indos_no=d.indos_no ";
                 string sqlstr = string.Format(str);
                 //Console.WriteLine("recog: "+ sqlstr);
                 GetConnection().Open();
@@ -197,6 +198,7 @@ namespace testdlibdotnetNuget
                 double[] desc;
                 if (reader != null)
                 {
+                    Description description = null;
                     while (reader.Read())
                     {
                         descList = new List<double>();
@@ -204,7 +206,12 @@ namespace testdlibdotnetNuget
                         descList.AddRange(desc);
 
                         //Console.WriteLine(string.Join(",",descList));
-                        list.Add( new Description(reader.GetInt64(0),reader.GetString(1), reader.GetString(2),descList));
+                        description = new Description();
+                        description.indosNo = reader.GetString(0);
+                        description.studentName = reader.GetString(1);
+                        description.imageName = reader.GetString(2);
+                        description.imageDescription = descList;
+                        list.Add(description);
                         //res =reader.GetString(0);
                         //string.Join(",", reader.GetFieldValue<double[]>(1));
                     }
@@ -253,24 +260,25 @@ namespace testdlibdotnetNuget
             return false;
         }
 
-        public static bool insertOrUpdateAttandance(string rollNo)
+        public static bool insertOrUpdateAttandance(string indosNo)
         {
             /* if entry time exist for the particular rollno then update exit time
              * else insert new entry for the current date
              */
             try
             {
-                string str = "select count(*) from attendance where roll_no='{0}'";
-                string sqlstr = string.Format(str, rollNo);
+                string str = "select count(*) from attendance where indos_no='{0}'";
+                string sqlstr = string.Format(str, indosNo);
                 GetConnection().Open();
                 NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
                 cmd.Connection = con;
                 cmd.CommandType = CommandType.Text;
+                CloseConnection();
                 int res = Convert.ToInt32(cmd.ExecuteScalar());
                 if (res > 0)
                 {
-                    str = "update attendance set exit_dateTime=now()::timestamp(0) where roll_no={0}";
-                    sqlstr = string.Format(str, rollNo);
+                    str = "update attendance set exit=now()::timestamp(0) where indos_no='{0}'";
+                    sqlstr = string.Format(str, indosNo);
                     //Console.WriteLine(sqlstr);
                     cmd = new NpgsqlCommand(sqlstr);
                     cmd.Connection = con;
@@ -283,14 +291,13 @@ namespace testdlibdotnetNuget
                 }
                 else
                 {
-                    str = "insert into attendance(roll_no,is_present,entry_dateTime) values({0},'true',now()::timestamp(0))";
-                    sqlstr = string.Format(str, rollNo);
+                    str = "insert into attendance(indos_no,present,entry) values('{0}','true',now()::timestamp(0))";
+                    sqlstr = string.Format(str, indosNo);
                     Console.WriteLine(sqlstr);
                     cmd = new NpgsqlCommand(sqlstr);
                     cmd.Connection = con;
                     cmd.CommandType = CommandType.Text;
                     res = cmd.ExecuteNonQuery();
-                    con.Close();
                     if (res > 0)
                     {
                         return true;
@@ -374,6 +381,31 @@ namespace testdlibdotnetNuget
                 }
             }
             return seafarerApplication;
+        }
+
+        ///
+
+        public static List<Institute> getInstitutesList()
+        {
+            List<Institute> institutesList = new List<Institute>();
+            string sqlstr = "select institute_id,institute_name from institutes";
+            GetConnection().Open();
+            NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+            if (reader != null)
+            {
+                Institute institute = null;
+                while (reader.Read())
+                {
+                    institute = new Institute();
+                    institute.instituteId = reader.GetInt32(0);
+                    institute.instituteName = reader.GetString(1);
+                    institutesList.Add(institute);
+                }
+            }
+            return institutesList;
         }
 
     }
