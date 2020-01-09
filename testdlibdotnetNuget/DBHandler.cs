@@ -273,7 +273,6 @@ namespace testdlibdotnetNuget
                 NpgsqlCommand cmd = new NpgsqlCommand(sqlstr);
                 cmd.Connection = con;
                 cmd.CommandType = CommandType.Text;
-                CloseConnection();
                 int res = Convert.ToInt32(cmd.ExecuteScalar());
                 if (res > 0)
                 {
@@ -382,9 +381,7 @@ namespace testdlibdotnetNuget
             }
             return seafarerApplication;
         }
-
-        ///
-
+        
         public static List<Institute> getInstitutesList()
         {
             List<Institute> institutesList = new List<Institute>();
@@ -405,6 +402,7 @@ namespace testdlibdotnetNuget
                     institutesList.Add(institute);
                 }
             }
+            CloseConnection();
             return institutesList;
         }
 
